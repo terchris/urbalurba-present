@@ -4,5 +4,5 @@
   ],
   "marp.enableHtml": true,
   "marp.exportType": "html",
-  "markdown.marp.enableHtml": true
+  "markdown.marp.html": true
 }

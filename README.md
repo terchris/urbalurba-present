@@ -110,14 +110,14 @@ npm install -g @marp-team/marp-cli
    - Search for "Marp for VS Code" 
    - Install the extension by Marp Team
 
-2. **VS Code Configuration:**
-   The template includes `.vscode/settings.json` with:
-   - Red Cross theme enabled
-   - HTML support enabled
-   - Export settings configured
+2. **Copy VS Code Configuration:**
+   ```bash
+   # Copy the VS Code settings to your project root
+   cp -r urbalurba-present/.vscode .
+   ```
 
 3. **Using in VS Code:**
-   - Open VS Code from your project root (the template configures paths automatically)
+   - Open VS Code from your project root: `code .`
    - Open any `.md` file with `marp: true` in frontmatter
    - Use Command Palette: "Marp: Export Slide Deck"
    - Preview slides with "Marp: Show Quick Pick of Marp Commands"

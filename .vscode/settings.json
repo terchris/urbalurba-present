@@ -1,0 +1,8 @@
+{
+  "marp.themes": [
+    "./urbalurba-present/red-cross-theme.css"
+  ],
+  "marp.enableHtml": true,
+  "marp.exportType": "html",
+  "markdown.marp.enableHtml": true
+}

@@ -23,20 +23,19 @@ The `urbalurba-present/` folder contains:
 
 1. **Create your presentation:**
    ```bash
-   cd urbalurba-present
-   # Create your own markdown file
+   # Create your own markdown file in your project root
    touch my-presentation.md
    ```
 
 2. **Write your content using the design patterns:**
-   - Reference `red-cross-template.md` for available patterns
-   - Follow content limits in `red-cross-design-guide.md`
+   - Reference `urbalurba-present/red-cross-template.md` for available patterns
+   - Follow content limits in `urbalurba-present/red-cross-design-guide.md`
    - Use design tags: `<!-- @design: pattern-name -->`
 
 3. **Generate HTML/PDF:**
    ```bash
-   marp my-presentation.md --theme red-cross-theme.css -o my-presentation.html
-   marp my-presentation.md --theme red-cross-theme.css --pdf
+   marp my-presentation.md --theme urbalurba-present/red-cross-theme.css -o my-presentation.html
+   marp my-presentation.md --theme urbalurba-present/red-cross-theme.css --pdf
    ```
 
 ## 🤖 For LLMs
@@ -65,12 +64,11 @@ LLMs should:
 curl -L $(curl -s https://api.github.com/repos/terchris/urbalurba-present/releases/latest | grep "browser_download_url.*urbalurba-present.zip" | cut -d '"' -f 4) -o urbalurba-present.zip && unzip urbalurba-present.zip -d urbalurba-present && rm urbalurba-present.zip
 
 # Create your presentation
-cd urbalurba-present
 touch my-quarterly-report.md
 
-# Write content using design patterns (reference red-cross-template.md)
+# Write content using design patterns (reference urbalurba-present/red-cross-template.md)
 # Generate presentation
-marp my-quarterly-report.md --theme red-cross-theme.css -o my-quarterly-report.html
+marp my-quarterly-report.md --theme urbalurba-present/red-cross-theme.css -o my-quarterly-report.html
 ```
 
 ## Design Patterns Available:
@@ -93,7 +91,7 @@ marp my-quarterly-report.md --theme red-cross-theme.css -o my-quarterly-report.h
 
 ## 📚 Documentation
 
-See `red-cross-design-guide.md` for:
+See `urbalurba-present/red-cross-design-guide.md` for:
 - Content limits for each design pattern
 - Word counts and bullet point guidelines  
 - Best practices for professional presentations
@@ -101,17 +99,28 @@ See `red-cross-design-guide.md` for:
 
 ## 🛠️ Requirements
 
-Install Marp CLI:
+### Marp CLI (Command Line)
 ```bash
 npm install -g @marp-team/marp-cli
 ```
 
-## 🎯 Red Cross Brand Standards
+### VS Code Setup (Optional)
+1. **Install Marp Extension:**
+   - Open VS Code Extensions (`Cmd+Shift+X`)
+   - Search for "Marp for VS Code" 
+   - Install the extension by Marp Team
 
-- **Primary Red:** #DA291C (PANTONE 485)
-- **Gray:** #6D6E70 (PANTONE COOL GRAY 11)  
-- **Typography:** Segoe UI font family
-- **Logo:** Official Norwegian Red Cross SVG
+2. **VS Code Configuration:**
+   The template includes `.vscode/settings.json` with:
+   - Red Cross theme enabled
+   - HTML support enabled
+   - Export settings configured
+
+3. **Using in VS Code:**
+   - Open VS Code from your project root (the template configures paths automatically)
+   - Open any `.md` file with `marp: true` in frontmatter
+   - Use Command Palette: "Marp: Export Slide Deck"
+   - Preview slides with "Marp: Show Quick Pick of Marp Commands"
 
 Perfect for creating professional presentations across all Red Cross departments!
 

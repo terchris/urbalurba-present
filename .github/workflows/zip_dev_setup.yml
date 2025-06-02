@@ -34,6 +34,10 @@ jobs:
             echo "❌ Missing red-cross-design-guide.md"
             exit 1
           fi
+          if [ ! -f ".vscode/settings.json" ]; then
+            echo "❌ Missing .vscode/settings.json"
+            exit 1
+          fi
           echo "✅ All template files are present"
 
       - name: 📦 Create urbalurba-present.zip

@@ -1,0 +1,57 @@
+name: 📦 Zip and Release Template
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  zip-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🎯 Validate template files
+        run: |
+          echo "🔍 Validating presentation template files..."
+          if [ ! -f "red-cross-template.md" ]; then
+            echo "❌ Missing red-cross-template.md"
+            exit 1
+          fi
+          if [ ! -f "red-cross-theme.css" ]; then
+            echo "❌ Missing red-cross-theme.css"
+            exit 1
+          fi
+          if [ ! -f "red-cross-design-guide.md" ]; then
+            echo "❌ Missing red-cross-design-guide.md"
+            exit 1
+          fi
+          echo "✅ All template files are present"
+
+      - name: 📦 Create urbalurba-present.zip
+        run: |
+          echo "📦 Creating urbalurba-present.zip..."
+          zip -r urbalurba-present.zip . -x ".github/*" ".git/*" "*.zip"
+
+      - name: ⬆️ Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: urbalurba-present
+          path: urbalurba-present.zip
+
+      - name: 🔖 Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.run_number }}
+          name: Red Cross Template v${{ github.run_number }}
+          draft: false
+          prerelease: false
+          files: urbalurba-present.zip

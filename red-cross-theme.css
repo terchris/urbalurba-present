@@ -1,0 +1,951 @@
+/* @theme norwegian-red-cross */
+
+/* Norwegian Red Cross Visual Identity
+   Based on Red Cross brand standards:
+   - Red: PANTONE 485 (#DA291C)
+   - Gray: PANTONE COOL GRAY 11 (#6D6E70)
+   - White: #FFFFFF
+*/
+
+@import 'default';
+
+:root {
+  --red-cross-red: #DA291C;
+  --red-cross-gray: #6D6E70;
+  --red-cross-light-gray: #E5E5E5;
+  --red-cross-dark-gray: #333333;
+  --red-cross-white: #FFFFFF;
+}
+
+/* Base section styling */
+section {
+  background-color: var(--red-cross-white);
+  color: var(--red-cross-dark-gray);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 60px 50px 40px 50px;
+  line-height: 1.3;
+}
+
+/* Base header styles - applied to regular slides only */
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h1,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h2,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h3,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h4,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h5,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h6 {
+  color: var(--red-cross-red);
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h1 {
+  font-size: 1.8em;
+  border-bottom: 4px solid var(--red-cross-red);
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h2 {
+  font-size: 1.4em;
+  margin-bottom: 18px;
+}
+
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h3 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+/* Paragraph and text styles */
+p {
+  margin: 0 0 15px 0;
+  font-size: 1em;
+}
+
+strong {
+  color: var(--red-cross-red);
+  font-weight: 600;
+}
+
+/* List styles */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+li {
+  margin-bottom: 6px;
+  font-size: 1em;
+}
+
+ul > li::marker {
+  color: var(--red-cross-red);
+}
+
+/* Code and preformatted text */
+code {
+  background-color: var(--red-cross-light-gray);
+  color: var(--red-cross-dark-gray);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+pre {
+  background-color: var(--red-cross-light-gray);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--red-cross-red);
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid var(--red-cross-light-gray);
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--red-cross-red);
+  color: var(--red-cross-white);
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #F9F9F9;
+}
+
+/* Blockquote styles */
+blockquote {
+  border-left: 4px solid var(--red-cross-red);
+  padding-left: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: var(--red-cross-gray);
+}
+
+/* Image styles */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header and footer */
+header, footer {
+  color: var(--red-cross-gray);
+  font-size: 0.9em;
+}
+
+/* Pagination */
+section::after {
+  color: var(--red-cross-gray);
+  font-size: 0.8em;
+}
+
+/* Title slide styling */
+section.title {
+  text-align: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--red-cross-white) 0%, #F8F8F8 100%);
+  border: 8px solid var(--red-cross-red);
+}
+
+/* Title slide - complete font isolation */
+section.title h1,
+section.title h2,
+section.title h3,
+section.title h4,
+section.title h5,
+section.title h6 {
+  color: var(--red-cross-red);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.title h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+section.title h2 {
+  color: var(--red-cross-gray);
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+section.title h3 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Section divider slide */
+section.section-divider {
+  background-color: var(--red-cross-red);
+  color: var(--red-cross-white);
+  text-align: center;
+  justify-content: center;
+}
+
+/* Section divider - complete font isolation */
+section.section-divider h1,
+section.section-divider h2,
+section.section-divider h3,
+section.section-divider h4,
+section.section-divider h5,
+section.section-divider h6 {
+  color: var(--red-cross-white);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.section-divider h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+section.section-divider h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.section-divider h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Inverted slide */
+section.invert {
+  background-color: var(--red-cross-dark-gray);
+  color: var(--red-cross-white);
+}
+
+/* Inverted slide - complete font isolation */
+section.invert h1,
+section.invert h2,
+section.invert h3,
+section.invert h4,
+section.invert h5,
+section.invert h6 {
+  color: var(--red-cross-white);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.invert h1 {
+  font-size: 2.5em;
+  border-bottom: 4px solid var(--red-cross-red);
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+section.invert h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.invert h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+section.invert strong {
+  color: var(--red-cross-red);
+}
+
+/* Lead slide (centered content) */
+section.lead {
+  text-align: center;
+  justify-content: center;
+}
+
+/* Lead slide - complete font isolation */
+section.lead h1,
+section.lead h2,
+section.lead h3,
+section.lead h4,
+section.lead h5,
+section.lead h6 {
+  color: var(--red-cross-red);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.lead h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+section.lead h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.lead h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Layout classes for design patterns */
+
+/* Header then columns layout */
+.header-then-columns .top-content {
+  margin-bottom: 30px;
+}
+
+.header-then-columns .columns {
+  margin-top: 20px;
+}
+
+/* Columns with callout layout */
+.columns-with-callout .columns {
+  align-items: center;
+}
+
+.columns-with-callout .stat-container {
+  margin: 20px 0;
+}
+
+/* Image content split layouts */
+.image-left-content-right,
+.image-right-content-left {
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+}
+
+.image-left-content-right .content,
+.image-right-content-left .content {
+  flex: 1;
+  padding: 0 30px;
+}
+
+/* Two-column layout */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  height: 100%;
+  align-items: start;
+}
+
+.columns-33-67 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  height: 100%;
+  align-items: start;
+}
+
+/* Norwegian Red Cross logo placeholder */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.red-cross-symbol {
+  width: 40px;
+  height: 40px;
+  background-color: var(--red-cross-red);
+  position: relative;
+  display: inline-block;
+}
+
+.red-cross-symbol::before,
+.red-cross-symbol::after {
+  content: '';
+  position: absolute;
+  background-color: var(--red-cross-white);
+}
+
+.red-cross-symbol::before {
+  width: 8px;
+  height: 40px;
+  left: 16px;
+  top: 0;
+}
+
+.red-cross-symbol::after {
+  width: 40px;
+  height: 8px;
+  left: 0;
+  top: 16px;
+}
+
+/* Highlight boxes */
+.highlight-box {
+  background-color: #FFF5F5;
+  border-left: 6px solid var(--red-cross-red);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+.info-box {
+  background-color: #F5F5F5;
+  border-left: 6px solid var(--red-cross-gray);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+/* Buttons and call-to-action elements */
+.cta-button {
+  background-color: var(--red-cross-red);
+  color: var(--red-cross-white);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #B8241A;
+}
+
+/* Statistics or key numbers */
+.big-number {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--red-cross-red);
+  text-align: center;
+  margin: 15px 0;
+}
+
+.stat-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.stat-number {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: var(--red-cross-red);
+  display: block;
+}
+
+.stat-label {
+  font-size: 1em;
+  color: var(--red-cross-gray);
+  margin-top: 8px;
+}
+
+/* Contact information styling */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.contact-info strong {
+  min-width: 80px;
+}
+
+/* Background image overlay layout */
+section.background-image-overlay {
+  position: relative;
+}
+
+/* Background image overlay - complete font isolation */
+section.background-image-overlay h1,
+section.background-image-overlay h2,
+section.background-image-overlay h3,
+section.background-image-overlay h4,
+section.background-image-overlay h5,
+section.background-image-overlay h6 {
+  color: var(--red-cross-red);
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+section.background-image-overlay h1 {
+  font-size: 1.8em;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+section.background-image-overlay h2 {
+  font-size: 1.4em;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+section.background-image-overlay h3 {
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+section.background-image-overlay p,
+section.background-image-overlay li {
+  color: var(--red-cross-red);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+section.background-image-overlay .stat-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+section.background-image-overlay .stat-number {
+  color: var(--red-cross-red);
+}
+
+section.background-image-overlay .stat-label {
+  color: var(--red-cross-gray);
+}
+
+/* Fullscreen overlay layout */
+section.fullscreen-overlay {
+  position: relative;
+}
+
+/* Fullscreen overlay - complete font isolation */
+section.fullscreen-overlay h1,
+section.fullscreen-overlay h2,
+section.fullscreen-overlay h3,
+section.fullscreen-overlay h4,
+section.fullscreen-overlay h5,
+section.fullscreen-overlay h6 {
+  color: var(--red-cross-white);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+section.fullscreen-overlay h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+section.fullscreen-overlay h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.fullscreen-overlay h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+section.fullscreen-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(218, 41, 28, 0.8), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+section.fullscreen-overlay h1,
+section.fullscreen-overlay h2,
+section.fullscreen-overlay h3,
+section.fullscreen-overlay p,
+section.fullscreen-overlay li {
+  position: relative;
+  z-index: 2;
+  color: var(--red-cross-white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+section.fullscreen-overlay .overlay-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+section.fullscreen-overlay .stat-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+}
+
+section.fullscreen-overlay .stat-number {
+  color: var(--red-cross-red);
+}
+
+section.fullscreen-overlay .stat-label {
+  color: var(--red-cross-gray);
+}
+
+/* Grid with highlight layout */
+section.grid-with-highlight {
+  text-align: center;
+}
+
+/* Grid with highlight - complete font isolation */
+section.grid-with-highlight h1,
+section.grid-with-highlight h2,
+section.grid-with-highlight h3,
+section.grid-with-highlight h4,
+section.grid-with-highlight h5,
+section.grid-with-highlight h6 {
+  color: var(--red-cross-red);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.grid-with-highlight h1 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+section.grid-with-highlight h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.grid-with-highlight h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Override highlight box spacing for grid layout */
+section.grid-with-highlight .highlight-box {
+  margin: 20px 0 0 0;
+  font-size: 0.95em;
+}
+
+.involvement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.involvement-card {
+  background-color: var(--red-cross-white);
+  border: 2px solid var(--red-cross-light-gray);
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.involvement-card:hover {
+  border-color: var(--red-cross-red);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(218, 41, 28, 0.2);
+}
+
+.involvement-card h3 {
+  color: var(--red-cross-red);
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+.involvement-card p {
+  color: var(--red-cross-gray);
+  margin: 0 0 15px 0;
+  font-size: 0.9em;
+  line-height: 1.3;
+  flex-grow: 1;
+}
+
+.involvement-card .cta-button {
+  margin: 0;
+  font-size: 0.85em;
+  padding: 8px 16px;
+  align-self: center;
+}
+
+/* Content then image layout */
+section.content-then-image {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 50px 0 50px;
+}
+
+/* Content then image - complete font isolation */
+section.content-then-image h1,
+section.content-then-image h2,
+section.content-then-image h3,
+section.content-then-image h4,
+section.content-then-image h5,
+section.content-then-image h6 {
+  color: var(--red-cross-red);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.content-then-image h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+section.content-then-image h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.content-then-image h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+section.content-then-image .top-content {
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+section.content-then-image .full-width-image {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 0;
+  height: 250px;
+  overflow: hidden;
+}
+
+section.content-then-image .full-width-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Metrics grid layout */
+section.metrics-grid {
+  text-align: center;
+  padding: 35px 50px 15px 50px;
+}
+
+/* Metrics grid - complete font isolation */
+section.metrics-grid h1,
+section.metrics-grid h2,
+section.metrics-grid h3,
+section.metrics-grid h4,
+section.metrics-grid h5,
+section.metrics-grid h6 {
+  color: var(--red-cross-red);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.metrics-grid h1 {
+  font-size: 2.2em;
+  margin-bottom: 30px;
+}
+
+section.metrics-grid h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.metrics-grid h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.metrics-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: auto auto !important;
+  gap: 20px !important;
+  margin: 0 auto 15px auto;
+  max-width: none;
+  width: 85%;
+}
+
+.metric-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 2px solid var(--red-cross-light-gray);
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--red-cross-red), #ff6b6b);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--red-cross-red);
+  box-shadow: 0 8px 24px rgba(218, 41, 28, 0.15);
+}
+
+.metric-card:hover::before {
+  transform: scaleX(1);
+}
+
+.metric-icon {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  opacity: 0.8;
+}
+
+.metric-number {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--red-cross-red);
+  margin-bottom: 3px;
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 0.8em;
+  color: var(--red-cross-gray);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.impact-summary {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1em;
+  color: var(--red-cross-gray);
+  text-align: center;
+}
+
+.impact-summary strong {
+  color: var(--red-cross-red);
+}
+
+/* Responsive for metrics grid */
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+    width: 95%;
+  }
+  
+  .metric-card {
+    padding: 30px 20px;
+    height: 160px;
+  }
+  
+  .metric-number {
+    font-size: 2.2em;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  section {
+    padding: 30px 25px 25px 25px;
+  }
+  
+  /* Keep columns side-by-side for presentations */
+  .columns, .columns-33-67 {
+    gap: 20px;
+  }
+  
+  /* Responsive font sizes - properly scoped to avoid conflicts */
+  section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h1 {
+    font-size: 1.5em;
+  }
+  
+  section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h2 {
+    font-size: 1.2em;
+  }
+  
+  /* Title slide responsive */
+  section.title h1 {
+    font-size: 2.2em;
+  }
+  
+  section.title h2 {
+    font-size: 1.2em;
+  }
+  
+  /* Section divider responsive */
+  section.section-divider h1 {
+    font-size: 2.2em;
+  }
+  
+  /* Lead slide responsive */
+  section.lead h1 {
+    font-size: 2.2em;
+  }
+  
+  /* Metrics grid responsive */
+  section.metrics-grid h1 {
+    font-size: 1.8em;
+  }
+  
+  /* Layout responsive adjustments */
+  .image-left-content-right .content,
+  .image-right-content-left .content {
+    padding: 0 15px;
+  }
+} 

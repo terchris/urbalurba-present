@@ -1,4 +1,4 @@
-/* @theme norwegian-red-cross */
+/* @theme red-cross-1-theme */
 
 /* Norwegian Red Cross Visual Identity
    Based on Red Cross brand standards:
@@ -307,40 +307,6 @@ section.lead h2 {
 section.lead h3 {
   font-size: 1.5em;
   margin-bottom: 20px;
-}
-
-/* Layout classes for design patterns */
-
-/* Header then columns layout */
-.header-then-columns .top-content {
-  margin-bottom: 30px;
-}
-
-.header-then-columns .columns {
-  margin-top: 20px;
-}
-
-/* Columns with callout layout */
-.columns-with-callout .columns {
-  align-items: center;
-}
-
-.columns-with-callout .stat-container {
-  margin: 20px 0;
-}
-
-/* Image content split layouts */
-.image-left-content-right,
-.image-right-content-left {
-  display: flex;
-  align-items: center;
-  min-height: 400px;
-}
-
-.image-left-content-right .content,
-.image-right-content-left .content {
-  flex: 1;
-  padding: 0 30px;
 }
 
 /* Two-column layout */
@@ -942,10 +908,4 @@ section.metrics-grid h3 {
   section.metrics-grid h1 {
     font-size: 1.8em;
   }
-  
-  /* Layout responsive adjustments */
-  .image-left-content-right .content,
-  .image-right-content-left .content {
-    padding: 0 15px;
-  }
-} 
+}

@@ -1,301 +1,187 @@
-# Red Cross Presentation Design Pattern Guide
+# Red Cross Presentation Design Pattern Guide for LLM Agents
 
-## Content Limits and Best Practices
+## Quick Pattern Selection Guide
 
-Based on analysis of `presentation.md`, here are the proven content limits for each design pattern:
-
----
-
-## 1. **design-title**
-**Purpose:** Opening slides, section covers, announcements, thank you pages
-
-**Content Limits:**
-- **Main heading:** 1-6 words (e.g., "Norwegian Red Cross Presentation Template")
-- **Subtitle:** 6-12 words (e.g., "A Modern, Customizable Slide Deck")
-- **Metadata:** 3 short items (e.g., "Norwegian Red Cross | June 2025 | Oslo")
-- **Logo:** Single image element
-
-**Best Practice:** Keep it simple and impactful. Focus on brand and key message.
-
----
-
-## 2. **design-agenda**
-**Purpose:** Table of contents, simple lists, step-by-step processes
-
-**Content Limits:**
-- **Main heading:** 1-2 words (e.g., "Agenda")
-- **List items:** Maximum 5-6 items
-- **Item length:** 3-8 words per item
-- **Total words:** 15-25 words
-
-**Example from presentation.md:**
-```
-# Agenda
-1. Section 1: About Red Cross Norway
-2. Section 2: Our Activities
-3. Section 3: Current Challenges
-4. Section 4: Technology & Innovation
-5. Section 5: What Can We Accomplish Together
-```
+**For Opening/Closing slides:** `design-title`  
+**For Table of Contents:** `design-agenda`  
+**For Section Transitions:** `design-section-divider`  
+**For Data/Statistics:** `design-2-columns-stats`  
+**For Mission/Overview:** `design-2-rows-top-text-bottom-columns`  
+**For Visual Stories:** `design-image-left-text-right` or `design-image-right-text-left`  
+**For Emotional Impact:** `design-image-background-2-columns`  
+**For Call-to-Action:** `design-2-columns-highlight-box`  
+**For Comparisons:** `design-2-columns`  
+**For Process/Results:** `design-2-rows-text-image`  
+**For Technical Content:** `design-code-snippet` or `design-mermaid-diagram`  
+**For Metrics/KPIs:** `design-grid-3-rows`  
+**For Quotes/Key Messages:** `design-quote`
 
 ---
 
-## 3. **design-section-divider**
-**Purpose:** Major section transitions, chapter breaks
+## Content Type → Pattern Mapping
 
-**Content Limits:**
-- **Section number:** 1-2 words (e.g., "Section 1")
-- **Section title:** 2-6 words (e.g., "About Red Cross Norway")
-- **Total elements:** Maximum 2 headings
-- **Total words:** 5-15 words
+### Text-Heavy Content
+- **Lists/Agendas** → `design-agenda` (5-6 items max)
+- **Comparisons** → `design-2-columns` (before/after, pros/cons)
+- **Detailed Information** → `design-2-rows-top-text-bottom-columns` (overview + details)
 
-**Best Practice:** Minimal, impactful transition slides.
+### Visual Content  
+- **With Images** → `design-image-left-text-right` or `design-image-right-text-left`
+- **Emotional Stories** → `design-image-background-2-columns` (minimal text over background)
+- **Process Demonstration** → `design-2-rows-text-image` (explanation + visual result)
 
----
+### Data/Statistics
+- **Few Key Stats** → `design-2-columns-stats` (text + callout numbers)
+- **Multiple Metrics** → `design-grid-3-rows` (dashboard of 6 cards max)
 
-## 4. **design-columns-with-callout**
-**Purpose:** Data presentation, stats with context, key metrics
+### Technical Content
+- **Code Examples** → `design-code-snippet` (10-20 lines max)
+- **System Architecture** → `design-mermaid-diagram` (flowcharts, diagrams)
 
-**Content Limits:**
-- **Main heading:** 2-6 words
-- **Left column:** 15-25 words, 3-5 bullet points
-- **Right column:** 1-2 stat containers + 1 highlight box
-- **Stat container:** Number + 2-6 word label
-- **Highlight box:** 8-15 words
-- **Total words:** 50-70 words
+### Action-Oriented
+- **Call-to-Action** → `design-2-columns-highlight-box` (grid of options + emphasis)
+- **Key Messages** → `design-quote` (memorable statements)
 
-**Example structure:**
-```
-# Founded on Humanitarian Principles (4 words)
-
-Left column:
-- Since 1865 (2 words)
-- First national Red Cross societies (5 words)
-- Part of 192-country movement (4 words)
-- Guardian of Geneva Conventions (4 words)
-
-Right column:
-- Stat: "158" + "Years of service" (3 words)
-- Highlight box: "Global Reach: Active in Africa, Asia, Europe..." (12 words)
-```
+### Structural
+- **Opening/Thank You** → `design-title` (branded, centered)
+- **Section Breaks** → `design-section-divider` (minimal transition)
 
 ---
 
-## 5. **design-header-then-columns**
-**Purpose:** Mission statements with details, overview with specifics
+## Pattern Specifications
 
-**Content Limits:**
-- **Main heading:** 3-6 words
-- **Top section:** 1 stat container + 1 quote (10-15 words)
-- **Each column:** 2-3 headings, 3-4 bullet points per heading
-- **Column content:** 20-30 words per column
-- **Total words:** 60-85 words
+### design-title
+**When to use:** Opening slides, section covers, thank you pages  
+**Content limits:** 1-6 word heading, 6-12 word subtitle, 3 metadata items  
+**Required elements:** Logo image, main title  
+**CSS class:** `title`
 
-**Example structure:**
-```
-# Our Mission & Scale (4 words)
+### design-agenda  
+**When to use:** Table of contents, simple lists, step-by-step processes  
+**Content limits:** 1-2 word heading, 5-6 list items, 3-8 words per item  
+**Total budget:** 15-25 words  
+**CSS class:** None
 
-Top: Stat + Quote (12 words)
+### design-section-divider
+**When to use:** Major section transitions, chapter breaks  
+**Content limits:** Section number + title, 5-15 total words  
+**Layout:** Centered, minimal  
+**CSS class:** `section-divider`
 
-Left column:
-## Our Reach (2 words)
-- 3 bullet points (12 words)
+### design-2-columns-stats
+**When to use:** Data presentation, stats with context, key metrics  
+**Content limits:** 50-70 total words, left column (15-25 words), right column (stat containers + highlight box)  
+**Layout:** 50/50 split with visual emphasis  
+**CSS class:** None
 
-Right column:  
-## Focus Areas (2 words)
-- 3 bullet points (9 words)
-```
+### design-2-rows-top-text-bottom-columns
+**When to use:** Mission statements with details, overview with specifics  
+**Content limits:** 60-85 total words, top section (stat + quote), bottom columns (20-30 words each)  
+**Layout:** Full-width header, then column grid  
+**CSS class:** None
+
+### design-image-left-text-right / design-image-right-text-left
+**When to use:** Visual storytelling, product showcases, case studies  
+**Content limits:** 15-30 total words, 3-6 word heading, 3-4 bullet points  
+**Layout:** 60/40 split (image/content)  
+**CSS class:** None
+
+### design-image-background-2-columns
+**When to use:** Emotional storytelling, impactful visuals, testimonials  
+**Content limits:** 25-35 total words, minimal text over background image  
+**Layout:** Content floats over blurred background  
+**CSS class:** `background-image-overlay`
+
+### design-2-columns-highlight-box
+**When to use:** Call-to-action grids, service offerings, volunteer opportunities  
+**Content limits:** 40-60 total words, 4 cards maximum, highlight box  
+**Layout:** Responsive grid with emphasis element  
+**CSS class:** `grid-with-highlight`
+
+### design-2-columns
+**When to use:** Before/after, challenges/solutions, pros/cons comparisons  
+**Content limits:** 30-50 total words, equal content distribution  
+**Layout:** 50/50 split, balanced content  
+**CSS class:** None
+
+### design-2-rows-text-image
+**When to use:** Process descriptions, technical showcases  
+**Content limits:** 20-45 total words, 3-5 bullet points  
+**Layout:** Text above, full-width image below  
+**CSS class:** `content-then-image`
+
+### design-code-snippet
+**When to use:** Technical demonstrations, API examples, tutorials  
+**Content limits:** 3-8 word heading, 10-20 code lines, minimal supporting text  
+**Focus:** Clean, readable code with syntax highlighting  
+**CSS class:** None
+
+### design-mermaid-diagram
+**When to use:** System architecture, process flows, technical concepts  
+**Content limits:** 3-6 word heading, complex but readable diagram  
+**Focus:** Visual explanation, minimal text  
+**CSS class:** None
+
+### design-grid-3-rows
+**When to use:** Impact dashboards, KPI presentations, achievement summaries  
+**Content limits:** 15-35 total words, 6 cards maximum  
+**Layout:** Grid of metric cards with icons and numbers  
+**CSS class:** `metrics-grid`
+
+### design-quote
+**When to use:** Inspirational quotes, key takeaways, memorable statements  
+**Content limits:** 5-15 total words, quote + optional attribution  
+**Layout:** Centered, emphasis typography  
+**CSS class:** `lead`
 
 ---
 
-## 6. **design-image-left-content-right** / **design-image-right-content-left**
-**Purpose:** Visual storytelling, product showcases, case studies
+## LLM Selection Algorithm
 
-**Content Limits:**
-- **Main heading:** 3-6 words
-- **Content area:** 1 heading + 3-4 bullet points
-- **Bullet points:** 2-4 words each
-- **Total words:** 15-30 words
+1. **Identify content type:**
+   - Opening/closing → `design-title`
+   - List/agenda → `design-agenda`
+   - Section break → `design-section-divider`
+   - Statistics/data → `design-2-columns-stats` or `design-grid-3-rows`
+   - Process/explanation → `design-2-rows-top-text-bottom-columns`
+   - Visual story → `design-image-*` patterns
+   - Call-to-action → `design-2-columns-highlight-box`
+   - Comparison → `design-2-columns`
+   - Technical → `design-code-snippet` or `design-mermaid-diagram`
+   - Quote/message → `design-quote`
 
-**Example:**
-```
-# Global Network & Local Impact (5 words)
+2. **Check content volume:**
+   - 5-15 words → Minimal patterns (title, quote, section-divider)
+   - 15-30 words → Visual patterns (image layouts)
+   - 30-60 words → Content patterns (columns, grids)
+   - 60-85 words → Dense patterns (header-then-columns, columns-with-callout)
 
-## Our Connection (2 words)
-- Part of 191-country network (4 words)
-- Local Norwegian community focus (4 words)
-- Global expertise, local action (4 words)
-```
-
----
-
-## 7. **design-background-image-overlay**
-**Purpose:** Emotional storytelling, impactful visuals, testimonials
-
-**Content Limits:**
-- **Main heading:** 1-3 words
-- **Two columns total**
-- **Left column:** 1 heading + 4-5 bullet points (15-20 words)
-- **Right column:** 1 stat container (5-8 words)
-- **Total words:** 25-35 words
-
-**Best Practice:** Keep text minimal - let the background image carry the emotional impact.
+3. **Apply pattern constraints:**
+   - Follow word limits strictly
+   - Use specified CSS classes
+   - Include required elements
+   - Maintain visual hierarchy
 
 ---
 
-## 8. **design-grid-with-highlight**
-**Purpose:** Call-to-action grids, service offerings, volunteer opportunities
+## Critical Rules for LLMs
 
-**Content Limits:**
-- **Main heading:** 2-4 words
-- **Grid items:** 4 cards maximum
-- **Per card:** 1-3 word title + 4-8 word description + button
-- **Highlight box:** 8-12 words
-- **Total words:** 40-60 words
+**Maximum Content Limits:**
+- Any slide: 85 words maximum
+- Any list: 8 bullet points maximum  
+- Heading levels: 3 maximum (H1, H2, H3)
 
-**Example structure:**
-```
-# Get Involved (2 words)
-
-4 cards:
-- "Language Training" + 5-word description + button
-- "Youth Mentoring" + 6-word description + button  
-- "First Aid Training" + 5-word description + button
-- "Technology" + 4-word description + button
-
-Highlight box: "Anyone can volunteer - regardless of background or experience" (9 words)
-```
-
----
-
-## 9. **design-columns**
-**Purpose:** Before/after, challenges/solutions, pros/cons comparisons
-
-**Content Limits:**
-- **Main heading:** 1-3 words
-- **Two columns:** Equal content distribution
-- **Per column:** 1 heading + 3-4 bullet points
-- **Bullet points:** 2-6 words each
-- **Total words:** 30-50 words
-
-**Example:**
-```
-# Current Challenges (2 words)
-
-Left: "What We Face" + 4 bullets (16 words)
-Right: "Our Response" + 3 bullets (12 words)
+**Required Format:**
+```markdown
+<!-- @design: pattern-name -->
+<!-- @slide: unique-slide-id -->
+<!-- _class: css-class-if-required -->
 ```
 
----
+**Pattern Selection Priority:**
+1. Content type (what information needs to be conveyed)
+2. Content volume (how much text/data)
+3. Visual requirements (images, diagrams, emphasis)
+4. Audience engagement (emotional vs informational)
 
-## 10. **design-content-then-image**
-**Purpose:** Process descriptions, technical showcases
-
-**Content Limits:**
-- **Main heading:** 2-4 words
-- **Top content:** 3-5 bullet points, very concise
-- **Bullet points:** 3-8 words each
-- **Total words:** 20-45 words
-- **Image:** Full-width, visual conclusion
-
-**Best Practice:** Let the image tell the story, use minimal text for context.
-
----
-
-## 11. **design-code-snippet**
-**Purpose:** Technical demonstrations, API examples, tutorials
-
-**Content Limits:**
-- **Main heading:** 3-8 words
-- **Code block:** 10-20 lines maximum
-- **Supporting text:** Minimal (5-15 words)
-- **Focus:** Clean, readable code with syntax highlighting
-
----
-
-## 12. **design-diagram**
-**Purpose:** System architecture, process flows, technical concepts
-
-**Content Limits:**
-- **Main heading:** 3-6 words
-- **Diagram:** Complex but readable (see Mermaid example)
-- **Supporting text:** Minimal caption (5-10 words)
-- **Focus:** Visual explanation, not text-heavy
-
----
-
-## 13. **design-metrics-grid**
-**Purpose:** Impact dashboards, KPI presentations, achievement summaries
-
-**Content Limits:**
-- **Main heading:** 2-4 words
-- **Grid items:** 6 cards maximum
-- **Per card:** Icon + Number/Metric + 2-6 word label
-- **Total words:** 15-35 words
-- **Focus:** Visual impact through numbers and icons
-
-**Example:**
-```
-# Key Impact Metrics (3 words)
-
-6 cards:
-- "43,000+" + "Active Volunteers" (2 words)
-- "65%" + "Faster Emergency Response" (3 words)
-- "40%" + "Better Rescue Success Rate" (4 words)
-- "191" + "Countries in Network" (3 words)
-- "1,300" + "Trained Responders" (2 words)  
-- "158" + "Years of Innovation" (3 words)
-```
-
----
-
-## 14. **design-quote**
-**Purpose:** Inspirational quotes, key takeaways, memorable statements
-
-**Content Limits:**
-- **Quote:** 5-12 words maximum
-- **Attribution:** Optional, 2-4 words
-- **Total words:** 5-15 words
-
-**Example:**
-```
-*"The power of humanity is in our hands"* (8 words)
-```
-
----
-
-## **Critical Design Rules:**
-
-### **The 7±2 Rule**
-- Maximum 5-9 items in any list
-- Optimal: 5-7 bullet points per slide
-
-### **Word Budget by Pattern Type:**
-- **Minimal patterns:** 5-15 words (title, quote, section-divider)
-- **Visual patterns:** 15-30 words (image layouts, diagrams)
-- **Content patterns:** 30-60 words (columns, grids)
-- **Dense patterns:** 60-85 words (header-then-columns, columns-with-callout)
-
-### **Typography Hierarchy:**
-- **H1:** Main slide title (1 per slide)
-- **H2:** Section headings (2-3 maximum)
-- **H3:** Subsection headings (rare, only in dense patterns)
-
-### **Visual Balance:**
-- **50/50 split:** Equal content columns
-- **60/40 split:** Image-dominant layouts
-- **Single focus:** One main message per slide
-
----
-
-## **Common Mistakes to Avoid:**
-
-1. **Text Overload:** More than 85 words on any slide
-2. **Bullet Point Excess:** More than 8 bullets in a single column
-3. **Hierarchy Confusion:** Using more than 3 heading levels
-4. **Visual Imbalance:** Unequal content distribution in columns
-5. **Purpose Mismatch:** Using wrong pattern for content type
-
----
-
-This guide ensures every slide maintains visual clarity, readability, and professional impact while following Red Cross brand standards.
+This guide ensures consistent, professional presentations that follow Red Cross brand standards while maximizing visual impact and readability.

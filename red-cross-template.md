@@ -1,18 +1,12 @@
 ---
 
 marp: true
-theme: red-cross-theme
+theme: red-cross-1-theme
 paginate: true
 header: 'Norwegian Red Cross'
 footer: 'www.rodekors.no'
 ---
 <!-- @design: design-title -->
-<!-- 
-  Description: Large centered title with logo, main heading, subtitle, and metadata
-  Use for: Opening slides, section covers, important announcements, thank you pages
-  Elements: Logo image, large title, subtitle, footer information
-  Layout: Centered content with clear hierarchy
--->
 <!-- @slide: slide-title-norwegian-red-cross -->
 <!-- _class: title -->
 
@@ -25,12 +19,6 @@ footer: 'www.rodekors.no'
 
 ---
 <!-- @design: design-agenda -->
-<!-- 
-  Description: Simple numbered or bulleted list for agenda items
-  Use for: Agenda slides, table of contents, simple lists, step-by-step processes
-  Elements: Heading, numbered/bulleted list items
-  Layout: Single column with clear list formatting
--->
 <!-- @slide: slide-agenda -->
 
 # Agenda
@@ -43,12 +31,6 @@ footer: 'www.rodekors.no'
 
 ---
 <!-- @design: design-section-divider -->
-<!-- 
-  Description: Bold section break with large heading and subheading
-  Use for: Major section transitions, chapter breaks, topic changes
-  Elements: Section number, section title, brief description
-  Layout: Centered, minimalist design for visual break
--->
 <!-- @slide: slide-section-1-intro -->
 <!-- _class: section-divider -->
 
@@ -60,13 +42,7 @@ Introduce who we are, our mission, scale, and foundation of our work.
 -->
 
 ---
-<!-- @design: design-columns-with-callout -->
-<!-- 
-  Description: Two-column layout with statistical callout boxes and highlight elements
-  Use for: Data presentation, feature comparisons, stats with context, key metrics
-  Elements: Left column (text/lists), right column (stat numbers, highlight boxes)
-  Layout: 50/50 split with emphasis on visual statistics
--->
+<!-- @design: design-2-columns-stats -->
 <!-- @slide: slide-founded-on-principles -->
 
 # Founded on Humanitarian Principles
@@ -106,13 +82,7 @@ Emphasize history and principles that guide our work.
 -->
 
 ---
-<!-- @design: design-header-then-columns -->
-<!-- 
-  Description: Content section at top, followed by multi-column layout below
-  Use for: Mission statements with details, overview with specifics, intro with breakdown
-  Elements: Top section (stats, quotes, intro), bottom columns (detailed info)
-  Layout: Full-width header, then column grid
--->
+<!-- @design: design-2-rows-top-text-bottom-columns -->
 <!-- @slide: slide-mission-scale -->
 
 # Our Mission & Scale
@@ -146,13 +116,7 @@ Simple mission statement with key statistics and focus areas.
 -->
 
 ---
-<!-- @design: design-image-left-content-right -->
-<!-- 
-  Description: Large image on left side, text content on right side
-  Use for: Visual storytelling, product showcases, photo documentation, case studies
-  Elements: Background image (left 60%), content area (right 40%)
-  Layout: Split screen with image emphasis
--->
+<!-- @design: design-image-left-text-right -->
 <!-- @slide: slide-global-network -->
 # Global Network & Local Impact
 
@@ -169,12 +133,6 @@ Show local-global connection with official IFRC emblem.
 
 ---
 <!-- @design: design-section-divider -->
-<!-- 
-  Description: Bold section break with large heading and subheading
-  Use for: Major section transitions, chapter breaks, topic changes
-  Elements: Section number, section title, brief description
-  Layout: Centered, minimalist design for visual break
--->
 <!-- @slide: slide-section-2-intro -->
 <!-- _class: section-divider -->
 # Section 2
@@ -185,13 +143,7 @@ Overview of the diverse programs and activities we run to serve communities acro
 -->
 
 ---
-<!-- @design: design-image-right-content-left -->
-<!-- 
-  Description: Text content on left side, large image on right side
-  Use for: Feature descriptions, program overviews, service explanations
-  Elements: Content area (left 40%), background image (right 60%)
-  Layout: Split screen with content emphasis
--->
+<!-- @design: design-image-right-text-left -->
 <!-- @slide: slide-community-learning -->
 # Community Learning Programs
 
@@ -208,13 +160,7 @@ Simple overview of language programs with key statistic.
 -->
 
 ---
-<!-- @design: design-image-left-content-right -->
-<!-- 
-  Description: Large image on left side, text content on right side
-  Use for: Visual storytelling, product showcases, photo documentation, case studies
-  Elements: Background image (left 60%), content area (right 40%)
-  Layout: Split screen with image emphasis
--->
+<!-- @design: design-image-left-text-right -->
 <!-- @slide: slide-innovation-health -->
 # Innovation: Health Technology
 
@@ -231,14 +177,9 @@ Showcase technology innovation with visual and key statistic.
 -->
 
 ---
-<!-- @design: design-background-image-overlay -->
-<!-- 
-  Description: Full background image with content overlaid in columns
-  Use for: Emotional storytelling, impactful visuals, human stories, testimonials
-  Elements: Background image (blurred/dimmed), overlay content in columns
-  Layout: Content floats over background with good contrast
--->
+<!-- @design: design-image-background-2-columns -->
 <!-- @slide: slide-youth-leadership -->
+<!-- _class: background-image-overlay -->
 
 # Youth Leadership
 
@@ -270,14 +211,9 @@ Youth program overview with background image behind text.
 
 
 ---
-<!-- @design: design-grid-with-highlight -->
-<!-- 
-  Description: Grid layout for multiple items with highlight callout box
-  Use for: Call-to-action grids, service offerings, volunteer opportunities, contact cards
-  Elements: Multiple cards/items in grid, highlight box for key message
-  Layout: Responsive grid with emphasis element
--->
+<!-- @design: design-2-columns-highlight-box -->
 <!-- @slide: slide-get-involved-grid -->
+<!-- _class: grid-with-highlight -->
 
 # Get Involved
 
@@ -319,12 +255,6 @@ Simple call to action with key volunteer roles.
 
 ---
 <!-- @design: design-section-divider -->
-<!-- 
-  Description: Bold section break with large heading and subheading
-  Use for: Major section transitions, chapter breaks, topic changes
-  Elements: Section number, section title, brief description
-  Layout: Centered, minimalist design for visual break
--->
 <!-- @slide: slide-section-3-intro -->
 <!-- _class: section-divider -->
 
@@ -336,15 +266,8 @@ Discuss the challenges we face and how we're addressing them with innovative sol
 -->
 
 ---
-<!-- @design: design-columns -->
-<!-- 
-  Description: Simple two-column layout for comparisons or related content
-  Use for: Before/after, challenges/solutions, pros/cons, side-by-side comparisons
-  Elements: Two equal columns with related content
-  Layout: 50/50 split, balanced content
--->
+<!-- @design: design-2-columns -->
 <!-- @slide: slide-current-challenges -->
-<!-- _class: invert -->
 
 # Current Challenges
 
@@ -373,12 +296,6 @@ Simple challenge overview with response strategy.
 
 ---
 <!-- @design: design-section-divider -->
-<!-- 
-  Description: Bold section break with large heading and subheading
-  Use for: Major section transitions, chapter breaks, topic changes
-  Elements: Section number, section title, brief description
-  Layout: Centered, minimalist design for visual break
--->
 <!-- @slide: slide-section-4-intro -->
 <!-- _class: section-divider -->
 # Section 4
@@ -389,14 +306,9 @@ Showcase how we use technology to enhance our humanitarian work and create great
 -->
 
 ---
-<!-- @design: design-content-then-image -->
-<!-- 
-  Description: Text content at top, full-width image below
-  Use for: Process descriptions, technical showcases, before/after reveals
-  Elements: Top content area, bottom full-width image
-  Layout: Stacked layout with visual conclusion
--->
+<!-- @design: design-2-rows-text-image -->
 <!-- @slide: slide-innovation-action -->
+<!-- _class: content-then-image -->
 # Innovation in Action
 
 <div class="top-content">
@@ -417,12 +329,6 @@ Showcase solutions with key improvement metric.
 
 ---
 <!-- @design: design-code-snippet -->
-<!-- 
-  Description: Technical slide with syntax-highlighted code block
-  Use for: Technical demonstrations, API examples, configuration samples, tutorials
-  Elements: Heading, code block with syntax highlighting
-  Layout: Code-focused with clear formatting
--->
 <!-- @slide: slide-innovation-nyss -->
 # Technology Innovation: Nyss Platform
 
@@ -446,13 +352,7 @@ Tech innovation example with visual code snippet.
 -->
 
 ---
-<!-- @design: design-diagram -->
-<!-- 
-  Description: Technical diagrams, flowcharts, architecture visualization
-  Use for: System architecture, process flows, organizational charts, technical concepts
-  Elements: Mermaid diagrams, flowcharts, network diagrams
-  Layout: Diagram-centered with supporting text
--->
+<!-- @design: design-mermaid-diagram -->
 <!-- @slide: slide-innovation-system-architecture -->
 # Our System Architecture
 
@@ -542,12 +442,6 @@ A diagram of our system architecture.
 
 ---
 <!-- @design: design-section-divider -->
-<!-- 
-  Description: Bold section break with large heading and subheading
-  Use for: Major section transitions, chapter breaks, topic changes
-  Elements: Section number, section title, brief description
-  Layout: Centered, minimalist design for visual break
--->
 <!-- @slide: slide-section-5-intro -->
 <!-- _class: section-divider -->
 # Section 5
@@ -558,14 +452,9 @@ Inspiring vision of future possibilities when community, technology, and humanit
 -->
 
 ---
-<!-- @design: design-metrics-grid -->
-<!-- 
-  Description: Dashboard-style grid of key performance indicators and statistics
-  Use for: Impact dashboards, KPI presentations, achievement summaries, data overviews
-  Elements: Multiple metric cards with icons, numbers, and labels
-  Layout: Responsive grid of metric cards
--->
+<!-- @design: design-grid-3-rows -->
 <!-- @slide: slide-impact-dashboard -->
+<!-- _class: metrics-grid -->
 # Key Impact Metrics
 
 <div class="metrics-grid">
@@ -613,15 +502,9 @@ Inspiring future vision with visual focus.
 -->
 
 ---
-<!-- _class: lead -->
 <!-- @design: design-quote -->
-<!-- 
-  Description: Large centered quote or key message
-  Use for: Inspirational quotes, key takeaways, memorable statements, transitions
-  Elements: Large quoted text, attribution if needed
-  Layout: Centered, emphasis typography
--->
 <!-- @slide: slide-questions-discussion -->
+<!-- _class: lead -->
 
 # Questions & Discussion
 
@@ -632,15 +515,9 @@ Invite questions. Be ready to elaborate on any topic or share additional stories
 -->
 
 ---
-<!-- _class: title -->
 <!-- @design: design-title -->
-<!-- 
-  Description: Large centered title with logo, main heading, subtitle, and metadata
-  Use for: Opening slides, section covers, important announcements, thank you pages
-  Elements: Logo image, large title, subtitle, footer information
-  Layout: Centered content with clear hierarchy
--->
 <!-- @slide: slide-thank-you -->
+<!-- _class: title -->
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Norwegian_Red_Cross_logo.svg" alt="Norwegian Red Cross" style="height: 40px;">
 
@@ -652,4 +529,4 @@ Invite questions. Be ready to elaborate on any topic or share additional stories
 
 <!--
 Thank the audience for their time and attention. End on a positive note about how technology and human compassion work together to build better communities.
---> 
+-->

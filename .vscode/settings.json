@@ -1,4 +1,7 @@
 {
+  "markdown.marp.exportType": "html",
+  //"markdown.marp.exportType": "pdf",
+  //"markdown.marp.exportType": "pptx",
   "markdown.marp.themes": [
     "urbalurba-present/red-cross-1-theme.css",
     "red-cross-1-theme.css"

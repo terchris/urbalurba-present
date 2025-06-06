@@ -141,6 +141,79 @@ img {
   height: auto;
 }
 
+/* Red Cross template images - use these URLs in presentations for professional appearance */
+
+/* Video layout styling - Marp uses clickable thumbnails instead of iframes */
+section.video-right-text-left .video-right img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.video-right-text-left .video-right img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+section.video-right-text-left .video-right a {
+  text-decoration: none;
+  display: block;
+}
+
+section.video-right-text-left .video-right p {
+  text-align: center;
+  margin-top: 10px;
+  color: var(--red-cross-red);
+  font-weight: 600;
+}
+
+/* Video right text left layout - use columns class for Marp compatibility */
+section.video-right-text-left .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+section.video-right-text-left .content-left {
+  padding-right: 20px;
+}
+
+section.video-right-text-left .video-right {
+  padding-left: 20px;
+}
+
+/* Video layout - complete font isolation */
+section.video-right-text-left h1,
+section.video-right-text-left h2,
+section.video-right-text-left h3,
+section.video-right-text-left h4,
+section.video-right-text-left h5,
+section.video-right-text-left h6 {
+  color: var(--red-cross-red);
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.video-right-text-left h1 {
+  font-size: 2.2em;
+  margin-bottom: 25px;
+}
+
+section.video-right-text-left h2 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+section.video-right-text-left h3 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
 /* Header and footer */
 header, footer {
   color: var(--red-cross-gray);

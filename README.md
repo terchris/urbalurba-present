@@ -1,6 +1,8 @@
 # Urbalurba Presentation System
 
-A revolutionary presentation framework that transforms how organizations create professional presentations. **You focus on your content, AI creates stunning presentations that follow best practices for conveying your message.**
+> *"Stop wasting time on how your presentation looks. Spend time on what you know - your subject."*
+
+A presentation framework that transforms how you create professional presentations. **You focus on your expertise and content, AI handles all the design decisions and creates stunning presentations that follow best practices for conveying your message.**
 
 ## ✨ What This System Does
 
@@ -10,28 +12,35 @@ A revolutionary presentation framework that transforms how organizations create 
 - 🎨 **Best Practice Layouts Automatically Applied** - Proven patterns for maximum message impact
 - 🏢 **Professional Branding Built-In** - Currently supports Norwegian Red Cross, expanding to more organizations
 - 🚀 **15+ Presentation Patterns** - Title slides, data visualization, storytelling, technical content, and more  
-- 📱 **Modern Web Output** - HTML presentations that work perfectly on any device
+- 📱 **Multiple Output Formats** - HTML, PDF, and PowerPoint presentations that work perfectly on any device
 - 🧠 **Message-Focused Design** - Every layout optimized for clear communication and audience engagement
 
 ## 🎯 Key Benefits
 
-### For Content Creators
-- **Just Provide Raw Content** → AI creates polished presentations following communication best practices
-- **No Design Skills Required** → Focus purely on your message, AI handles visual design
-- **Automatic Brand Compliance** → Every slide follows organizational standards
-- **Message Optimization** → AI selects layouts that maximize impact for your specific content type
+- **🤖 AI Creates Your Presentation** → Just provide raw content, get polished slides following communication best practices
+- **⚡ 95% Faster** → From idea to professional presentation in minutes, not hours  
+- **🎨 No Design Skills Needed** → Focus on your message, AI handles all visual design decisions
+- **🏢 Brand Compliance Built-In** → Every slide automatically follows organizational standards
+- **📱 Modern Output** → HTML, PDF, and PowerPoint formats that work everywhere
 
-### For Organizations  
-- **Consistent Excellence** → Every presentation follows proven communication patterns
-- **Dramatic Time Savings** → 95% reduction in presentation creation time
-- **Quality Assurance** → AI ensures every slide follows best practices for audience engagement
-- **Scalable Solution** → Support multiple brand templates (Red Cross now, more coming)
+## 🔧 How It Works
 
-### For Technical Teams
-- **Modern Web Technology** → Future-proof HTML output, no proprietary dependencies
-- **Version Control Ready** → Track changes like code, integrate into workflows
-- **Automated Generation** → Perfect for documentation, reports, and automated workflows
-- **Cross-Platform** → Works everywhere, from mobile to large screens
+### Simple 4-Step Process:
+
+1. **📝 You Provide Content** → Create `presentation-input.md` with your workshop notes, bullet points, or any raw text describing your presentation
+2. **🤖 AI Creates Initial Structure** → AI reads your content + organization settings, generates `my-presentation.md` with suggested slide layouts and design patterns
+3. **✏️ You Refine & Iterate** → Edit `my-presentation.md` like working in PowerPoint - modify content, reorder slides, adjust messaging. Export anytime to see results
+4. **🎨 System Generates Output** → Convert to HTML, PDF, or PowerPoint with perfect branding and professional design
+
+![howto/editing-presentation.png](./howto/editing-presentation.png)
+
+### The Magic:
+- **AI gives you a smart starting point** with optimal layouts for each content type (stats → data visualization, stories → image layouts, etc.)
+- **You maintain full control** to edit, iterate, and perfect your presentation
+- **Instant preview** by exporting during your editing process
+- **Automatic brand compliance** using your organization's colors, fonts, and imagery built into every design pattern
+
+**For detailed step-by-step instructions with screenshots, see the [complete how-to guide](howto/).**
 
 ## 🚀 Quick Start
 
@@ -40,54 +49,64 @@ A revolutionary presentation framework that transforms how organizations create 
 curl -L $(curl -s https://api.github.com/repos/terchris/urbalurba-present/releases/latest | grep "browser_download_url.*urbalurba-present.zip" | cut -d '"' -f 4) -o urbalurba-present.zip && unzip urbalurba-present.zip -d urbalurba-present && rm urbalurba-present.zip
 ```
 
-### 2. Create Your First Presentation
-```bash
-# Create your presentation file
-touch my-presentation.md
+**What you get:**
+- `template-settings.md` - Configure for your organization  
+- `ai-instructions.md` - Simple instructions for Claude Code
+- `ai-design-template.md` - Detailed design patterns and specifications
+- `red-cross-1-theme.css` - Norwegian Red Cross visual theme
+- `red-cross-example-presentation.md` - Complete working example
+- `examples/` - HTML, PDF, and PowerPoint exports
 
-# Add the required header to your file
-echo '---
-marp: true
-theme: red-cross-1-theme
-paginate: true
-header: "Norwegian Red Cross"
-footer: "www.rodekors.no"
----' > my-presentation.md
+### 2. Configure Your Organization Settings
+```bash
+# Edit the template settings for your organization
+# Replace Norwegian Red Cross settings with your own
+edit urbalurba-present/template-settings.md
+
+# Update: organization name, website, logo, images, videos, theme file
+# This tells AI what branding and media to use in your presentations
 ```
 
-### 3. Write Content Using Templates
-Reference `urbalurba-present/red-cross-template.md` for examples of all available layouts.
-
-### 4. Generate Your Presentation
+### 3. Create Your Content Input
 ```bash
-# Create HTML presentation
+# Create your content input file with your raw material
+# Add your workshop notes, bullet points, or any text describing your presentation
+```
+
+**Example content for `presentation-input.md`:**
+```markdown
+# My Presentation Ideas
+- Main topic: Digital transformation
+- Key statistics: 95% efficiency improvement
+- Three main benefits: speed, quality, compliance
+- Call to action: pilot program
+```
+
+**The important thing is to create the `presentation-input.md` file with your actual content.**
+
+### 4. AI Creates Initial Structure
+```bash
+# Type: claude code
+# Then tell Claude: "Please read and follow ai-instructions.md"
+# Claude will automatically read your files and create my-presentation.md
+```
+
+### 5. Edit & Iterate Your Presentation
+```bash
+# Edit my-presentation.md in any text editor or VS Code
+# Modify content, reorder slides, adjust messaging
+# Export anytime during editing to preview results
+
+# Create HTML presentation (repeat as needed during editing)
 marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css -o my-presentation.html
 
 # Create PDF (optional)
 marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css --pdf
+
+# Create PowerPoint (optional)
+marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css --pptx
 ```
 
-## 📊 Create Microsoft PowerPoint Presentation
-
-Convert your web presentation to PowerPoint format:
-
-```bash
-# Generate PowerPoint from HTML
-# Method 1: Use browser to open HTML, then "Save As" → PowerPoint
-open my-presentation.html
-
-# Method 2: Use online converters (HTML to PPTX)
-# Upload your generated HTML file to online conversion services
-
-# Method 3: Import HTML slides into PowerPoint
-# Open PowerPoint → Insert → New Slide → Slides from Outline → Import HTML
-```
-
-**PowerPoint Integration Benefits:**
-- Maintain all visual formatting and branding
-- Edit individual slides in PowerPoint if needed
-- Share in familiar corporate format
-- Combine with existing PowerPoint workflows
 
 ## 📋 Available Design Patterns
 
@@ -105,15 +124,35 @@ open my-presentation.html
 
 ## 🛠️ Setup Requirements
 
-### Essential: Marp CLI
+### Required Software
+
+1. **Claude Pro/Team Subscription** - [Subscribe to Claude](https://claude.ai/upgrade) for AI presentation creation
+2. **Claude Code** - [Install Claude Code](https://docs.anthropic.com/en/docs/claude-code) for AI-powered file editing
+3. **VS Code** - [Download and install](https://code.visualstudio.com/download) if you don't have it
+4. **Node.js** - [Download and install](https://nodejs.org/en/download/) if you don't have it
+5. **Marp CLI** - Install via npm:
+   ```bash
+   npm install -g @marp-team/marp-cli
+   ```
+6. **Marp VS Code Extension** - [Install from VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
+
+### VS Code Setup
 ```bash
-npm install -g @marp-team/marp-cli
+# Copy VS Code settings only if .vscode folder doesn't exist
+if [ ! -d ".vscode" ]; then
+  cp -r urbalurba-present/.vscode .
+else
+  echo "Warning: .vscode exists. Check urbalurba-present/.vscode for Marp settings."
+fi
+
+# Open VS Code from your project root
+code .
 ```
 
-### Optional: VS Code Integration
-1. Install "Marp for VS Code" extension
-2. Copy `.vscode` settings from the template
-3. Get live preview and export options in your editor
+**Benefits of VS Code + Marp Extension:**
+- Live preview while editing
+- Easy export options via Command Palette
+- Syntax highlighting for presentation markdown
 
 ## 📊 Real-World Impact
 
@@ -130,15 +169,31 @@ npm install -g @marp-team/marp-cli
 - Best practices for audience engagement built-in
 - 95% faster from idea to finished presentation
 
+## 📁 Live Examples
+
+See the system in action with a complete Norwegian Red Cross presentation:
+
+**Source:** [`red-cross-example-presentation.md`](red-cross-example-presentation.md) - Complete markdown source showing all design patterns and content structure
+
+**Exported Formats:**
+- **[HTML Version](examples/red-cross-example-presentation.html)** - Interactive web presentation with animations and embedded videos
+- **[PDF Version](examples/red-cross-example-presentation.pdf)** - Print-ready format for handouts and documentation  
+- **[PowerPoint Version](examples/red-cross-example-presentation.pptx)** - Editable slides for Microsoft Office workflows
+
+**How it was created:**
+1. Open `red-cross-example-presentation.md` in VS Code
+2. Use the Marp extension export button (see [plugin documentation](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) for details)
+3. Export to HTML, PDF, and PowerPoint formats directly from VS Code
+
+These examples demonstrate all 15+ design patterns in a real-world presentation showcasing Norwegian Red Cross programs and services.
+
 ## 🎓 Training Resources
 
-- **`red-cross-template.md`** - Complete examples of all design patterns
-- **`red-cross-design-guide.md`** - Detailed specifications and best practices
-- **Live examples** - See the template in action at [presentation URL]
+- **`template-settings.md`** - Organization configuration variables
+- **`ai-design-template.md`** - Complete AI guide for all design patterns  
+- **`red-cross-example-presentation.md`** - Full working example with all patterns
 
 ## 🤝 Support & Community
-
-This system is actively maintained and used across Norwegian Red Cross departments. 
 
 **For questions or improvements:**
 - Technical issues: Create GitHub issue
@@ -152,7 +207,13 @@ This system is actively maintained and used across Norwegian Red Cross departmen
 Built with [Marp framework](https://marp.app/) and designed to revolutionize how organizations create presentations. The system combines proven communication design patterns with AI-powered content optimization to ensure every presentation achieves maximum impact.
 
 **Current Templates:**
-- Norwegian Red Cross (complete branding and design system)
+- Norwegian Red Cross (complete branding and design system) - See `template-settings.md`
 - Additional organizational templates coming soon
+
+**System Architecture:**
+- `template-settings.md` - Organization variables (logos, colors, images)
+- `ai-design-template.md` - Generic AI instructions using variables
+- `[org]-theme.css` - Specific visual themes per organization
+- `examples/` - Live demonstrations in HTML, PDF, and PowerPoint formats
 
 *Created by Urbalurba to transform presentation creation through AI-powered design automation.*

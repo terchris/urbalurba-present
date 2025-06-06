@@ -4,6 +4,22 @@
 
 This detailed guide walks you through the complete process of creating professional presentations using the Urbalurba system with Claude Code.
 
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Step-by-Step Walkthrough](#step-by-step-walkthrough)
+   - [Step 1: Install and Setup](#step-1-install-and-setup)
+   - [Step 2: Configure Your Organization](#step-2-configure-your-organization)
+   - [Step 3: Create Your Content Input](#step-3-create-your-content-input)
+   - [Step 4: Use Claude Code to Create Your Presentation](#step-4-use-claude-code-to-create-your-presentation)
+   - [Step 5: Edit and Iterate in VS Code](#step-5-edit-and-iterate-in-vs-code)
+   - [Step 6: Export Your Presentation](#step-6-export-your-presentation)
+3. [Iteration Workflow](#iteration-workflow)
+4. [Understanding Markdown for Presentations](#understanding-markdown-for-presentations)
+5. [Troubleshooting](#troubleshooting)
+6. [Best Practices](#best-practices)
+7. [Next Steps](#next-steps)
+
 ## Prerequisites
 
 Before starting, ensure you have all required software installed (see main README.md for installation links):
@@ -21,15 +37,16 @@ Before starting, ensure you have all required software installed (see main READM
 
 1. **Download the Urbalurba system** using the curl command from the README
 2. **Install the Marp for VS Code extension** from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-3. **Configure VS Code settings** (if you don't already have `.vscode` folder):
+3. **Configure VS Code settings:**
+
+   If you don't have a `.vscode` folder in your project root, copy the settings:
    ```bash
-   # Only copy if .vscode folder doesn't exist yet
-   if [ ! -d ".vscode" ]; then
-     cp -r urbalurba-present/.vscode .
-   else
-     echo "Warning: .vscode folder already exists. Check urbalurba-present/.vscode for Marp settings to merge manually."
-   fi
+   mkdir -p .vscode
+   cd .vscode
+   copy ../urbalurba-present/.vscode/settings.json .
    ```
+
+   If you already have VS Code settings, manually copy the `markdown.marp.*` settings from `urbalurba-present/.vscode/settings.json`.
 
 ### Step 2: Configure Your Organization
 
@@ -147,25 +164,6 @@ The power of this system is in the iteration cycle:
 
 You can export multiple times during editing to share drafts, get feedback, and perfect your presentation.
 
-## Advanced Usage
-
-### Custom Design Patterns
-If you need design patterns not covered in the standard set, you can:
-- Study the `ai-design-template.md` structure
-- Add custom CSS to your theme file
-- Create new pattern specifications
-
-### Multiple Organization Templates
-To support multiple organizations:
-1. Create separate settings files: `template-settings-org1.md`, `template-settings-org2.md`
-2. Update the `ai-instructions.md` to reference the appropriate settings file
-3. Maintain separate theme CSS files for each organization
-
-### Integration with Existing Workflows
-- **Version control**: Commit both markdown and exported files
-- **Team collaboration**: Share markdown files for collaborative editing
-- **Automation**: Use Marp CLI in CI/CD pipelines for automated presentation generation
-
 ## Troubleshooting
 
 ### Common Issues
@@ -199,6 +197,137 @@ To support multiple organizations:
 4. **Test your exports** - Verify all formats work before presenting
 5. **Save your input** - Keep `presentation-input.md` for future reference
 
+## Understanding Markdown for Presentations
+
+The Urbalurba system uses Markdown, a simple text formatting language that's easy to learn and powerful for creating presentations. Here's what you need to know:
+
+### Why Markdown?
+- **Text-based** - Your presentation content isn't locked in proprietary formats
+- **Version control friendly** - Track changes, collaborate with git
+- **AI-compatible** - Claude Code and other AI tools work perfectly with markdown
+- **Future-proof** - Plain text files will always be readable
+
+### Basic Markdown Syntax for Presentations
+
+**Headers (create new slides):**
+```markdown
+# Main Slide Title (H1)
+## Section within slide (H2)
+### Subsection (H3)
+```
+
+**Lists:**
+```markdown
+- Bullet point
+- Another point
+  - Sub-point (indent with 2 spaces)
+
+1. Numbered list
+2. Second item
+```
+
+**Emphasis:**
+```markdown
+**Bold text**
+*Italic text*
+`Code or technical terms`
+```
+
+**Links and Images:**
+```markdown
+[Link text](https://example.com)
+![Image description](image-url.jpg)
+![bg left:60%](background-image.jpg)  // Marp-specific background
+```
+
+### Marp-Specific Features
+
+**Slide separation:**
+```markdown
+---
+```
+Each `---` creates a new slide.
+
+**Background images:**
+```markdown
+![bg](image.jpg)           // Full background
+![bg left:40%](image.jpg)  // Left 40% background
+![bg right:60%](image.jpg) // Right 60% background
+```
+
+**CSS Classes:**
+```markdown
+<!-- _class: title -->
+# This slide uses the title class
+```
+
+### Learning Resources
+
+**Essential Markdown Guides:**
+- **[Markdown Guide](https://www.markdownguide.org/)** - Complete reference with examples
+- **[GitHub Markdown Guide](https://guides.github.com/features/mastering-markdown/)** - Practical examples and syntax
+
+**Marp-Specific Resources:**
+
+- **[Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/)** - Quick reference for syntax
+- **[Marp Documentation](https://marpit.marp.app/)** - Official documentation for presentation features
+- **[Marp VS Code Extension Guide](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)** - VS Code features and shortcuts
+- **[Marp CLI Documentation](https://github.com/marp-team/marp-cli)** - Command line export options
+
+**Advanced Learning:**
+
+- **[CommonMark Spec](https://commonmark.org/)** - Complete markdown specification
+
+### Quick Reference for Presentations
+
+**Most used syntax in presentations:**
+
+```markdown
+---
+marp: true
+theme: red-cross-1-theme.css
+---
+
+# Title Slide
+Subtitle text
+
+---
+
+# Content Slide
+
+## Section Header
+- Bullet point
+- Another point
+
+**Key statistic:** 95% improvement
+
+---
+
+# Two-Column Layout
+
+<div class="columns">
+<div>
+
+## Left Column
+- Content here
+
+</div>
+<div>
+
+## Right Column
+- More content
+
+</div>
+</div>
+```
+
+### Tips for Presentation Markdown
+
+1. **Keep it simple** - Markdown's strength is simplicity
+2. **Use consistent formatting** - Stick to the patterns in `ai-design-template.md`
+3. **Preview frequently** - Use VS Code's live preview while editing
+4. **Learn incrementally** - Start with basic syntax, add complexity as needed
+
 ## Next Steps
 
 Once you're comfortable with the basic workflow:
@@ -206,5 +335,6 @@ Once you're comfortable with the basic workflow:
 - Customize your organization's theme CSS
 - Create templates for common presentation types
 - Set up automated workflows for regular presentations
+- **Master markdown syntax** using the resources above
 
 Remember: The goal is to spend your time on what you know best - your subject matter - while letting AI handle the design and structure.

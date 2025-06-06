@@ -14,6 +14,8 @@ A presentation framework that transforms how you create professional presentatio
 - 🚀 **15+ Presentation Patterns** - Title slides, data visualization, storytelling, technical content, and more  
 - 📱 **Multiple Output Formats** - HTML, PDF, and PowerPoint presentations that work perfectly on any device
 - 🧠 **Message-Focused Design** - Every layout optimized for clear communication and audience engagement
+- 🤖 **AI Loves text** - AI is built into vscode and will help you write.
+- 🔓 **presentation is not locked into a specific tool** - Just as in free speech, your text should not be locked into a proprietary format that someone else controls.
 
 ## 🎯 Key Benefits
 
@@ -40,13 +42,23 @@ A presentation framework that transforms how you create professional presentatio
 - **Instant preview** by exporting during your editing process
 - **Automatic brand compliance** using your organization's colors, fonts, and imagery built into every design pattern
 
-**For detailed step-by-step instructions with screenshots, see the [complete how-to guide](howto/).**
+**For detailed step-by-step instructions with screenshots, see the [complete how-to guide](howto/howto.md).**
 
 ## 🚀 Quick Start
 
 ### 1. Install the System
+
+**Mac/Linux:**
 ```bash
 curl -L $(curl -s https://api.github.com/repos/terchris/urbalurba-present/releases/latest | grep "browser_download_url.*urbalurba-present.zip" | cut -d '"' -f 4) -o urbalurba-present.zip && unzip urbalurba-present.zip -d urbalurba-present && rm urbalurba-present.zip
+```
+
+**Windows (PowerShell):**
+```powershell
+$url = (Invoke-RestMethod "https://api.github.com/repos/terchris/urbalurba-present/releases/latest").assets | Where-Object {$_.name -eq "urbalurba-present.zip"} | Select-Object -ExpandProperty browser_download_url
+Invoke-WebRequest -Uri $url -OutFile "urbalurba-present.zip"
+Expand-Archive -Path "urbalurba-present.zip" -DestinationPath "." -Force
+Remove-Item "urbalurba-present.zip"
 ```
 
 **What you get:**
@@ -55,7 +67,6 @@ curl -L $(curl -s https://api.github.com/repos/terchris/urbalurba-present/releas
 - `ai-design-template.md` - Detailed design patterns and specifications
 - `red-cross-1-theme.css` - Norwegian Red Cross visual theme
 - `red-cross-example-presentation.md` - Complete working example
-- `examples/` - HTML, PDF, and PowerPoint exports
 
 ### 2. Configure Your Organization Settings
 ```bash
@@ -85,28 +96,32 @@ edit urbalurba-present/template-settings.md
 **The important thing is to create the `presentation-input.md` file with your actual content.**
 
 ### 4. AI Creates Initial Structure
+
 ```bash
-# Type: claude code
-# Then tell Claude: "Please read and follow ai-instructions.md"
-# Claude will automatically read your files and create my-presentation.md
+claude code
+````
+
+At the prompt type:
+
+```plaintext
+Please read and follow ai-instructions.md
 ```
+
+>Claude will automatically read your files and create my-presentation.md
 
 ### 5. Edit & Iterate Your Presentation
+
+Open vscode in the project root:
+
 ```bash
-# Edit my-presentation.md in any text editor or VS Code
-# Modify content, reorder slides, adjust messaging
-# Export anytime during editing to preview results
-
-# Create HTML presentation (repeat as needed during editing)
-marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css -o my-presentation.html
-
-# Create PDF (optional)
-marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css --pdf
-
-# Create PowerPoint (optional)
-marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css --pptx
+code .
 ```
 
+Edit `my-presentation.md` to refine your presentation. You can:
+- Modify content directly in the markdown file
+- Reorder slides by moving sections around
+- Adjust messaging and add details as needed
+- Export to preview results (se the [howto guide](howto/howto.md) for details)
 
 ## 📋 Available Design Patterns
 
@@ -137,15 +152,18 @@ marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css --pptx
 6. **Marp VS Code Extension** - [Install from VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
 
 ### VS Code Setup
-```bash
-# Copy VS Code settings only if .vscode folder doesn't exist
-if [ ! -d ".vscode" ]; then
-  cp -r urbalurba-present/.vscode .
-else
-  echo "Warning: .vscode exists. Check urbalurba-present/.vscode for Marp settings."
-fi
 
-# Open VS Code from your project root
+If you already use VS Code then you copy the `markdown.marp.`settings from the `urbalurba-present/.vscode` folder to your project root. If you don't have a `.vscode` folder in your project root, then you can copy the settings from the `urbalurba-present/.vscode` folder like this:
+
+```bash
+mkdir -p .vscode
+cd .vscode
+copy ../urbalurba-present/.vscode/settings.json .
+```
+
+Then open VS Code in your project root:
+
+```bash
 code .
 ```
 
@@ -204,7 +222,7 @@ These examples demonstrate all 15+ design patterns in a real-world presentation 
 
 ## About This Project
 
-Built with [Marp framework](https://marp.app/) and designed to revolutionize how organizations create presentations. The system combines proven communication design patterns with AI-powered content optimization to ensure every presentation achieves maximum impact.
+Built with [Marp framework](https://marp.app/) and designed to revolutionize how you  create presentations. The system combines proven communication design patterns with AI-powered content optimization to ensure every presentation achieves maximum impact.
 
 **Current Templates:**
 - Norwegian Red Cross (complete branding and design system) - See `template-settings.md`

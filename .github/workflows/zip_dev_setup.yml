@@ -22,16 +22,24 @@ jobs:
       - name: 🎯 Validate template files
         run: |
           echo "🔍 Validating presentation template files..."
-          if [ ! -f "red-cross-template.md" ]; then
-            echo "❌ Missing red-cross-template.md"
+          if [ ! -f "template-settings.md" ]; then
+            echo "❌ Missing template-settings.md"
             exit 1
           fi
-          if [ ! -f "red-cross-theme.css" ]; then
-            echo "❌ Missing red-cross-theme.css"
+          if [ ! -f "ai-instructions.md" ]; then
+            echo "❌ Missing ai-instructions.md"
             exit 1
           fi
-          if [ ! -f "red-cross-design-guide.md" ]; then
-            echo "❌ Missing red-cross-design-guide.md"
+          if [ ! -f "ai-design-template.md" ]; then
+            echo "❌ Missing ai-design-template.md"
+            exit 1
+          fi
+          if [ ! -f "red-cross-1-theme.css" ]; then
+            echo "❌ Missing red-cross-1-theme.css"
+            exit 1
+          fi
+          if [ ! -f "red-cross-example-presentation.md" ]; then
+            echo "❌ Missing red-cross-example-presentation.md"
             exit 1
           fi
           if [ ! -f ".vscode/settings.json" ]; then
@@ -43,7 +51,7 @@ jobs:
       - name: 📦 Create urbalurba-present.zip
         run: |
           echo "📦 Creating urbalurba-present.zip..."
-          zip -r urbalurba-present.zip . -x ".github/*" ".git/*" "*.zip"
+          zip -r urbalurba-present.zip . -x ".github/*" ".git/*" "*.zip" "examples/*" "howto/*"
 
       - name: ⬆️ Upload artifact
         uses: actions/upload-artifact@v4
@@ -55,7 +63,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ github.run_number }}
-          name: Red Cross Template v${{ github.run_number }}
+          name: Urbalurba Presentation System v${{ github.run_number }}
           draft: false
           prerelease: false
           files: urbalurba-present.zip

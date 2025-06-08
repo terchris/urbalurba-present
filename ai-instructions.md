@@ -6,9 +6,9 @@ Create a professional presentation by reading the user's content and applying th
 ## Step-by-Step Process
 
 ### 1. Read the Input Files
-- **`presentation-input.md`** - Contains the user's raw content, workshop notes, or presentation ideas
-- **`template-settings.md`** - Contains organization branding settings (logos, images, videos, etc.)
-- **`ai-design-template.md`** - Contains all design patterns and technical specifications
+- **`presentation-input.md`** - Contains the user's raw content, workshop notes, or presentation ideas (in project root)
+- **`template-settings.md`** - Contains organization branding settings (logos, images, videos, etc.) (in project root)
+- **`urbalurba-present/ai-design-template.md`** - Contains all design patterns and technical specifications
 
 ### 2. Analyze the Content
 - Identify the main topics and key messages from `presentation-input.md`
@@ -17,7 +17,7 @@ Create a professional presentation by reading the user's content and applying th
 - Identify content types (statistics, stories, technical info, call-to-action, etc.)
 
 ### 3. Select Design Patterns
-Based on content analysis, choose appropriate design patterns from `ai-design-template.md`:
+Based on content analysis, choose appropriate design patterns from `urbalurba-present/ai-design-template.md`:
 - **Opening slide:** `design-title`
 - **Data/Statistics:** `design-2-columns-stats` or `design-grid-3-rows`
 - **Stories/Case studies:** `design-image-left-text-right` or `design-image-right-text-left`
@@ -31,7 +31,7 @@ Based on content analysis, choose appropriate design patterns from `ai-design-te
 Use variables from `template-settings.md`:
 - `{organization_name}` for organization references
 - `{header_text}` and `{footer_text}` for headers/footers
-- `{theme_file}` for the CSS theme
+- `{theme_file}` for the CSS theme (themes are located in `urbalurba-present/themes/`)
 - `{image_innovation}`, `{image_community}`, `{image_background}`, `{image_operations}` for design patterns requiring images
 - `{video_embed}`, `{video_default}`, `{video_thumbnail}` for video content
 

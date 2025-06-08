@@ -34,7 +34,7 @@ A presentation framework that transforms how you create professional presentatio
 3. **✏️ You Refine & Iterate** → Edit `my-presentation.md` like working in PowerPoint - modify content, reorder slides, adjust messaging. Export anytime to see results
 4. **🎨 System Generates Output** → Convert to HTML, PDF, or PowerPoint with perfect branding and professional design
 
-![howto/editing-presentation.png](./howto/editing-presentation.png)
+![howto/editing-presentation.png](https://github.com/terchris/urbalurba-present/raw/main/howto/editing-presentation.png)
 
 ### The Magic:
 - **AI gives you a smart starting point** with optimal layouts for each content type (stats → data visualization, stories → image layouts, etc.)
@@ -42,7 +42,7 @@ A presentation framework that transforms how you create professional presentatio
 - **Instant preview** by exporting during your editing process
 - **Automatic brand compliance** using your organization's colors, fonts, and imagery built into every design pattern
 
-**For detailed step-by-step instructions with screenshots, see the [complete how-to guide](howto/howto.md).**
+**For detailed step-by-step instructions with screenshots, see the [complete how-to guide](https://github.com/terchris/urbalurba-present/blob/main/howto/howto.md).**
 
 ## 🚀 Quick Start
 
@@ -62,39 +62,53 @@ Remove-Item "urbalurba-present.zip"
 ```
 
 **What you get:**
-- `template-settings.md` - Configure for your organization  
+- `initiate.sh` - Automated setup script
+- `template-settings.md` - Organization configuration template
 - `ai-instructions.md` - Simple instructions for Claude Code
 - `ai-design-template.md` - Detailed design patterns and specifications
 - `themes/` - Multiple visual themes (Red Cross, CNN, DNB Bank, UN)
 - `red-cross-example-presentation.md` - Complete working example
 
-### 2. Configure Your Organization Settings
+### 2. Initialize Your Project
 ```bash
-# Edit the template settings for your organization
-# Replace Norwegian Red Cross settings with your own
-edit urbalurba-present/template-settings.md
-
-# Update: organization name, website, logo, images, videos, theme file
-# Choose from available themes: red-cross-1-theme.css, cnn-theme.css, dnb-bank-theme.css, un-theme.css
-# This tells AI what branding and media to use in your presentations
+# Run the setup script to copy files and configure VS Code
+./urbalurba-present/initiate.sh
 ```
 
-### 3. Create Your Content Input
+This script will:
+- Copy `template-settings.md` to your project root
+- Create a starter `presentation-input.md` file
+- Set up VS Code settings for Marp
+
+### 3. Open VS Code and Edit Your Files
 ```bash
-# Create your content input file with your raw material
-# Add your workshop notes, bullet points, or any text describing your presentation
+# Open VS Code in your project
+code .
 ```
 
-**Example content for `presentation-input.md`:**
+**Edit these files in VS Code:**
+- **`template-settings.md`** - Configure your organization (name, website, logo, theme)
+- **`presentation-input.md`** - Add your presentation content and ideas
+
+**Available themes to choose from:**
+- `urbalurba-present/themes/red-cross-1-theme.css` (Humanitarian/NGO)
+- `urbalurba-present/themes/cnn-theme.css` (Media/News)
+- `urbalurba-present/themes/dnb-bank-theme.css` (Financial/Corporate)
+- `urbalurba-present/themes/un-theme.css` (International/Diplomatic)
+
+The `initiate.sh` script creates a starter file with this structure:
 ```markdown
 # My Presentation Ideas
-- Main topic: Digital transformation
-- Key statistics: 95% efficiency improvement
-- Three main benefits: speed, quality, compliance
-- Call to action: pilot program
-```
 
-**The important thing is to create the `presentation-input.md` file with your actual content.**
+## Main Topics
+- Add your main presentation topics here
+- Key messages you want to convey
+- Important statistics or data points
+
+## Call to Action
+- What do you want your audience to do?
+- Next steps for engagement
+```
 
 ### 4. AI Creates Initial Structure
 
@@ -105,24 +119,18 @@ claude code
 At the prompt type:
 
 ```plaintext
-Please read and follow ai-instructions.md
+Please read and follow urbalurba-present/ai-instructions.md
 ```
 
 >Claude will automatically read your files and create my-presentation.md
 
 ### 5. Edit & Iterate Your Presentation
 
-Open vscode in the project root:
-
-```bash
-code .
-```
-
-Edit `my-presentation.md` to refine your presentation. You can:
+Edit `my-presentation.md` in VS Code to refine your presentation. You can:
 - Modify content directly in the markdown file
 - Reorder slides by moving sections around
 - Adjust messaging and add details as needed
-- Export to preview results (se the [howto guide](howto/howto.md) for details)
+- Export to preview results (see the [howto guide](https://github.com/terchris/urbalurba-present/blob/main/howto/howto.md) for details)
 
 ## 🎨 Available Themes
 
@@ -135,7 +143,7 @@ Choose from professionally designed themes in the `themes/` folder:
 | **dnb-bank-theme.css** | DNB Bank | Financial/Corporate | Professional blue, banking aesthetic |
 | **un-theme.css** | United Nations | International/Diplomatic | UN blue, global organization style |
 
-**To use a theme:** Update the `theme_file` setting in `template-settings.md` to point to your chosen theme (e.g., `themes/cnn-theme.css`).
+**To use a theme:** Update the `theme_file` setting in `template-settings.md` to point to your chosen theme (e.g., `urbalurba-present/themes/cnn-theme.css`).
 
 ## 📋 Available Design Patterns
 

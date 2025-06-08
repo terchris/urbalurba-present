@@ -36,17 +36,16 @@ Before starting, ensure you have all required software installed (see main READM
 ### Step 1: Install and Setup
 
 1. **Download the Urbalurba system** using the curl command from the README
-2. **Install the Marp for VS Code extension** from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-3. **Configure VS Code settings:**
-
-   If you don't have a `.vscode` folder in your project root, copy the settings:
+2. **Run the setup script:**
    ```bash
-   mkdir -p .vscode
-   cd .vscode
-   copy ../urbalurba-present/.vscode/settings.json .
+   # Initialize your project with the automated setup script
+   ./urbalurba-present/initiate.sh
    ```
-
-   If you already have VS Code settings, manually copy the `markdown.marp.*` settings from `urbalurba-present/.vscode/settings.json`.
+   This script automatically:
+   - Copies `template-settings.md` to your project root
+   - Creates a starter `presentation-input.md` file with helpful structure
+   - Sets up VS Code settings for Marp (merges with existing settings if needed)
+3. **Install the Marp for VS Code extension** from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
 
 ### Step 2: Configure Your Organization
 
@@ -102,13 +101,13 @@ Create `presentation-input.md` with your raw content. This can be:
 
 2. **Give Claude the instruction:**
    ```
-   Please read and follow ai-instructions.md
+   Please read and follow urbalurba-present/ai-instructions.md
    ```
 
 3. **Claude will automatically:**
    - Read your `presentation-input.md` content
    - Apply your organization settings from `template-settings.md`
-   - Follow design patterns from `ai-design-template.md`
+   - Follow design patterns from `urbalurba-present/ai-design-template.md`
    - Create `my-presentation.md` with proper structure and branding
 
 ### Step 5: Edit and Iterate in VS Code
@@ -144,13 +143,13 @@ The Marp extension provides multiple export options through VS Code:
 **Alternative: Command Line Export**
 ```bash
 # HTML (for web sharing)
-marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css -o my-presentation.html
+marp my-presentation.md --theme urbalurba-present/themes/red-cross-1-theme.css -o my-presentation.html
 
 # PDF (for handouts)  
-marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css --pdf
+marp my-presentation.md --theme urbalurba-present/themes/red-cross-1-theme.css --pdf
 
 # PowerPoint (for Office workflows)
-marp my-presentation.md --theme urbalurba-present/red-cross-1-theme.css --pptx
+marp my-presentation.md --theme urbalurba-present/themes/red-cross-1-theme.css --pptx
 ```
 
 ## Iteration Workflow

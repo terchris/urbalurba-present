@@ -34,8 +34,12 @@ jobs:
             echo "❌ Missing ai-design-template.md"
             exit 1
           fi
-          if [ ! -f "red-cross-1-theme.css" ]; then
-            echo "❌ Missing red-cross-1-theme.css"
+          if [ ! -d "themes" ]; then
+            echo "❌ Missing themes folder"
+            exit 1
+          fi
+          if [ ! -f "themes/red-cross-1-theme.css" ]; then
+            echo "❌ Missing themes/red-cross-1-theme.css"
             exit 1
           fi
           if [ ! -f "red-cross-example-presentation.md" ]; then
@@ -44,6 +48,10 @@ jobs:
           fi
           if [ ! -f ".vscode/settings.json" ]; then
             echo "❌ Missing .vscode/settings.json"
+            exit 1
+          fi
+          if [ ! -f "initiate.sh" ]; then
+            echo "❌ Missing initiate.sh"
             exit 1
           fi
           echo "✅ All template files are present"

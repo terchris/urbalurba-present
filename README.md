@@ -50,7 +50,7 @@ A presentation framework that transforms how you create professional presentatio
 
 **Mac/Linux:**
 ```bash
-curl -L $(curl -s https://api.github.com/repos/terchris/urbalurba-present/releases/latest | grep "browser_download_url.*urbalurba-present.zip" | cut -d '"' -f 4) -o urbalurba-present.zip && unzip urbalurba-present.zip -d urbalurba-present && rm urbalurba-present.zip
+curl -L $(curl -s https://api.github.com/repos/terchris/urbalurba-present/releases/latest | grep "browser_download_url.*urbalurba-present.zip" | cut -d '"' -f 4) -o urbalurba-present.zip && unzip urbalurba-present.zip -d urbalurba-present && rm urbalurba-present.zip && ./urbalurba-present/initiate.sh
 ```
 
 **Windows (PowerShell):**
@@ -59,28 +59,27 @@ $url = (Invoke-RestMethod "https://api.github.com/repos/terchris/urbalurba-prese
 Invoke-WebRequest -Uri $url -OutFile "urbalurba-present.zip"
 Expand-Archive -Path "urbalurba-present.zip" -DestinationPath "." -Force
 Remove-Item "urbalurba-present.zip"
+& "./urbalurba-present/initiate.sh"
 ```
 
-**What you get:**
-- `initiate.sh` - Automated setup script
-- `template-settings.md` - Organization configuration template
-- `ai-instructions.md` - Simple instructions for Claude Code
-- `ai-design-template.md` - Detailed design patterns and specifications
-- `themes/` - Multiple visual themes (Red Cross, CNN, DNB Bank, UN)
-- `red-cross-example-presentation.md` - Complete working example
+**What this one command does:**
+- Downloads the latest Urbalurba system
+- Extracts it to `urbalurba-present/` folder
+- Runs the setup script automatically
+- Copies `template-settings.md` to your project root
+- Creates a starter `presentation-input.md` file
+- Sets up VS Code settings for Marp
 
-### 2. Initialize Your Project
-```bash
-# Run the setup script to copy files and configure VS Code
-./urbalurba-present/initiate.sh
+You'll see output like:
+```
+🚀 Initiating Urbalurba Presentation System...
+📄 Copying template-settings.md...
+📝 Creating presentation-input.md...
+⚙️  Setting up VS Code configuration...
+🎉 Setup complete! Your project is ready.
 ```
 
-This script will:
-- Copy `template-settings.md` to your project root
-- Create a starter `presentation-input.md` file
-- Set up VS Code settings for Marp
-
-### 3. Open VS Code and Edit Your Files
+### 2. Open VS Code and Edit Your Files
 ```bash
 # Open VS Code in your project
 code .
@@ -90,11 +89,11 @@ code .
 - **`template-settings.md`** - Configure your organization (name, website, logo, theme)
 - **`presentation-input.md`** - Add your presentation content and ideas
 
-**Available themes to choose from:**
-- `urbalurba-present/themes/red-cross-1-theme.css` (Humanitarian/NGO)
-- `urbalurba-present/themes/cnn-theme.css` (Media/News)
-- `urbalurba-present/themes/dnb-bank-theme.css` (Financial/Corporate)
-- `urbalurba-present/themes/un-theme.css` (International/Diplomatic)
+**Available themes to choose from (use just the name):**
+- `red-cross-1-theme` (Humanitarian/NGO)
+- `cnn-theme` (Media/News)
+- `dnb-bank-theme` (Financial/Corporate)
+- `un-theme` (International/Diplomatic)
 
 The `initiate.sh` script creates a starter file with this structure:
 ```markdown
@@ -110,7 +109,7 @@ The `initiate.sh` script creates a starter file with this structure:
 - Next steps for engagement
 ```
 
-### 4. AI Creates Initial Structure
+### 3. AI Creates Initial Structure
 
 ```bash
 claude code
@@ -119,12 +118,12 @@ claude code
 At the prompt type:
 
 ```plaintext
-Please read and follow urbalurba-present/ai-instructions.md
+I need you to create a presentation. Please start by reading urbalurba-present/ai-instructions.md and following those instructions exactly.
 ```
 
 >Claude will automatically read your files and create my-presentation.md
 
-### 5. Edit & Iterate Your Presentation
+### 4. Edit & Iterate Your Presentation
 
 Edit `my-presentation.md` in VS Code to refine your presentation. You can:
 - Modify content directly in the markdown file
@@ -143,7 +142,7 @@ Choose from professionally designed themes in the `themes/` folder:
 | **dnb-bank-theme.css** | DNB Bank | Financial/Corporate | Professional blue, banking aesthetic |
 | **un-theme.css** | United Nations | International/Diplomatic | UN blue, global organization style |
 
-**To use a theme:** Update the `theme_file` setting in `template-settings.md` to point to your chosen theme (e.g., `urbalurba-present/themes/cnn-theme.css`).
+**To use a theme:** Update the `theme_name` setting in `template-settings.md` to your chosen theme (e.g., `cnn-theme`).
 
 ## 📋 Available Design Patterns
 

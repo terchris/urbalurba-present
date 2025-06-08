@@ -6,7 +6,7 @@ organization_name: "Norwegian Red Cross"
 website: "www.rodekors.no"
 logo_url: "https://upload.wikimedia.org/wikipedia/commons/8/81/Norwegian_Red_Cross_logo.svg"
 logo_alt: "Norwegian Red Cross"
-theme_file: "urbalurba-present/themes/red-cross-1-theme.css"
+theme_name: "red-cross-1-theme"
 ```
 
 ## Presentation Defaults

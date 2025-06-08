@@ -31,7 +31,7 @@ Based on content analysis, choose appropriate design patterns from `urbalurba-pr
 Use variables from `template-settings.md`:
 - `{organization_name}` for organization references
 - `{header_text}` and `{footer_text}` for headers/footers
-- `{theme_file}` for the CSS theme (themes are located in `urbalurba-present/themes/`)
+- `{theme_name}` for the CSS theme (use just the name without path or .css extension)
 - `{image_innovation}`, `{image_community}`, `{image_background}`, `{image_operations}` for design patterns requiring images
 - `{video_embed}`, `{video_default}`, `{video_thumbnail}` for video content
 
@@ -42,12 +42,14 @@ Generate `my-presentation.md` with:
 ```yaml
 ---
 marp: true
-theme: {theme_file}
+theme: {theme_name}
 paginate: true
 header: '{header_text}'
 footer: '{footer_text}'
 ---
 ```
+
+**Note:** Use `{theme_name}` from template-settings.md. The theme name should be just the base filename without path or .css extension. VS Code's Marp extension will resolve the theme path automatically using the .vscode/settings.json configuration.
 
 **Slide structure for each slide:**
 ```markdown

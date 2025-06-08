@@ -4,10 +4,11 @@
   //"markdown.marp.exportType": "pptx",
   "markdown.marp.themes": [
     // These themes are the ones you use when you have installed the urbalurba-present package
-    "./urbalurba-present/dnb-bank-theme.css",
-    "./urbalurba-present/cnn-theme.css",
-    "./urbalurba-present/un-theme.css",
-    "./urbalurba-present/red-cross-1-theme.css",
+    "./urbalurba-present/themes/red-cross-1-theme.css",
+    "./urbalurba-present/themes/dnb-bank-theme.css",
+    "./urbalurba-present/themes/cnn-theme.css",
+    "./urbalurba-present/themes/un-theme.css",
+
 
     // These only works when developing urbalurba-present
     "./themes/red-cross-1-theme.css",

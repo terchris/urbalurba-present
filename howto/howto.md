@@ -101,7 +101,7 @@ Create `presentation-input.md` with your raw content. This can be:
 
 2. **Give Claude the instruction:**
    ```
-   Please read and follow urbalurba-present/ai-instructions.md
+   I need you to create a presentation. Please start by reading urbalurba-present/ai-instructions.md and following those instructions exactly.
    ```
 
 3. **Claude will automatically:**

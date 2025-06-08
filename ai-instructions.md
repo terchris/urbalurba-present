@@ -80,9 +80,15 @@ Speaker notes:
 ### 7. Content Guidelines
 - **Maximum 85 words per slide**
 - **Maximum 8 bullet points per list**
+- **Maximum 6 words for main slide headings** (to prevent text wrapping and content overflow)
 - **Use clear, concise language**
 - **Focus on key messages, not detailed explanations**
 - **Ensure logical flow between slides**
+
+**Long Heading Solutions:**
+If a heading exceeds 6 words, use one of these approaches:
+- Shorten the heading: "Technical Staff Benefits" instead of "Why Technical Staff Love Kompetansenettverk"
+- Use title + subtitle: `# Technical Staff Benefits` with `## Why They Love Kompetansenettverk`
 
 ## Output
 Save the completed presentation as `my-presentation.md` with proper Marp formatting, design patterns, and organization branding applied.

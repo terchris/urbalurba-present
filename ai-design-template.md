@@ -162,14 +162,14 @@ Each design pattern must be implemented with proper HTML structure and CSS class
 ### design-image-left-text-right / design-image-right-text-left
 **When to use:** Visual storytelling, product showcases, case studies  
 **Content limits:** 15-30 total words, 3-6 word heading, 3-4 bullet points  
-**Layout:** 60/40 split (image/content)  
+**Layout:** 40/60 split (image/content)  
 **CSS class:** None
 **IMAGE REQUIRED:** Replace placeholder with relevant image
 **Required HTML structure:**
 ```html
-![bg left:60%]({image_innovation})
+![bg left:40%]({image_innovation})
 <!-- OR -->
-![bg right:60%]({image_community})
+![bg right:40%]({image_community})
 
 ## Content Title
 - Bullet points here
@@ -378,12 +378,21 @@ Each design pattern must be implemented with proper HTML structure and CSS class
 - Any slide: 85 words maximum
 - Any list: 8 bullet points maximum  
 - Heading levels: 3 maximum (H1, H2, H3)
+- Main slide headings: 6 words maximum (to prevent text wrapping and content overflow)
 
 **Heading Level Rules:**
 - Main slide titles: Use `#` (H1) - e.g., `# Strategic Risk: Microsoft Lock-in`
 - Subsections within slides: Use `##` (H2) - e.g., `## Current Situation`  
 - Sub-subsections: Use `###` (H3) - e.g., `### Key Benefits`
 - NEVER use `##` for main slide titles
+
+**Long Heading Solutions:**
+- **Problem:** "Why Technical Staff Love Kompetansenettverk" (6 words) causes text wrapping and content overflow
+- **Solution:** Shorten to "Technical Staff Benefits" (3 words) or use subtitle approach:
+  ```markdown
+  # Technical Staff Benefits
+  ## Why They Love Kompetansenettverk
+  ```
 
 **Required Marp Configuration:**
 ```markdown

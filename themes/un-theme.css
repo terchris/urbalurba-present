@@ -1,0 +1,1007 @@
+/* @theme un-theme */
+
+/* United Nations Visual Identity
+   Based on UN brand standards:
+   - UN Blue: #009edb (official UN blue)
+   - Dark Blue: #1e3a8a (darker variant for text)
+   - Light Blue: #e6f3ff (backgrounds and highlights)
+   - Gray: #6b7280 (professional gray)
+   - White: #ffffff
+*/
+
+@import 'default';
+
+:root {
+  --un-blue: #009edb;
+  --un-dark-blue: #1e3a8a;
+  --un-light-blue: #e6f3ff;
+  --un-gray: #6b7280;
+  --un-dark-gray: #374151;
+  --un-light-gray: #f3f4f6;
+  --un-white: #ffffff;
+}
+
+/* Base section styling */
+section {
+  background-color: var(--un-white);
+  color: var(--un-dark-gray);
+  font-family: 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  padding: 60px 50px 40px 50px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* Base header styles - applied to regular slides only */
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h1,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h2,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h3,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h4,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h5,
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h6 {
+  color: var(--un-dark-blue);
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h1 {
+  font-size: 1.8em;
+  border-bottom: 4px solid var(--un-blue);
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h2 {
+  font-size: 1.4em;
+  margin-bottom: 18px;
+}
+
+section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h3 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+/* Paragraph and text styles */
+p {
+  margin: 0 0 15px 0;
+  font-size: 1em;
+  color: var(--un-dark-gray);
+}
+
+strong {
+  color: var(--un-blue);
+  font-weight: 600;
+}
+
+/* List styles */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+li {
+  margin-bottom: 6px;
+  font-size: 1em;
+  color: var(--un-dark-gray);
+}
+
+ul > li::marker {
+  color: var(--un-blue);
+}
+
+/* Code and preformatted text */
+code {
+  background-color: var(--un-light-gray);
+  color: var(--un-dark-gray);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+pre {
+  background-color: var(--un-light-gray);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--un-blue);
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid var(--un-light-gray);
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--un-blue);
+  color: var(--un-white);
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Blockquote styles */
+blockquote {
+  border-left: 4px solid var(--un-blue);
+  padding-left: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: var(--un-gray);
+}
+
+/* Image styles */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Video layout styling - Marp uses clickable thumbnails instead of iframes */
+section.video-right-text-left .video-right img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.video-right-text-left .video-right img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+section.video-right-text-left .video-right a {
+  text-decoration: none;
+  display: block;
+}
+
+section.video-right-text-left .video-right p {
+  text-align: center;
+  margin-top: 10px;
+  color: var(--un-blue);
+  font-weight: 600;
+}
+
+/* Video right text left layout - use columns class for Marp compatibility */
+section.video-right-text-left .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+section.video-right-text-left .content-left {
+  padding-right: 20px;
+}
+
+section.video-right-text-left .video-right {
+  padding-left: 20px;
+}
+
+/* Video layout - complete font isolation */
+section.video-right-text-left h1,
+section.video-right-text-left h2,
+section.video-right-text-left h3,
+section.video-right-text-left h4,
+section.video-right-text-left h5,
+section.video-right-text-left h6 {
+  color: var(--un-blue);
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.video-right-text-left h1 {
+  font-size: 2.2em;
+  margin-bottom: 25px;
+}
+
+section.video-right-text-left h2 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+section.video-right-text-left h3 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+/* Header and footer */
+header, footer {
+  color: var(--un-gray);
+  font-size: 0.9em;
+}
+
+/* Pagination */
+section::after {
+  color: var(--un-gray);
+  font-size: 0.8em;
+}
+
+/* Title slide styling */
+section.title {
+  text-align: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--un-white) 0%, var(--un-light-blue) 100%);
+  border: 8px solid var(--un-blue);
+  position: relative;
+}
+
+/* UN emblem background pattern for title slides */
+section.title::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--un-light-blue);
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+section.title * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Title slide - complete font isolation */
+section.title h1,
+section.title h2,
+section.title h3,
+section.title h4,
+section.title h5,
+section.title h6 {
+  color: var(--un-dark-blue);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.title h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+section.title h2 {
+  color: var(--un-gray);
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+section.title h3 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Section divider slide */
+section.section-divider {
+  background: linear-gradient(135deg, var(--un-blue) 0%, var(--un-dark-blue) 100%);
+  color: var(--un-white);
+  text-align: center;
+  justify-content: center;
+}
+
+/* Section divider - complete font isolation */
+section.section-divider h1,
+section.section-divider h2,
+section.section-divider h3,
+section.section-divider h4,
+section.section-divider h5,
+section.section-divider h6 {
+  color: var(--un-white);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.section-divider h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+section.section-divider h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.section-divider h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Inverted slide */
+section.invert {
+  background-color: var(--un-dark-gray);
+  color: var(--un-white);
+}
+
+/* Inverted slide - complete font isolation */
+section.invert h1,
+section.invert h2,
+section.invert h3,
+section.invert h4,
+section.invert h5,
+section.invert h6 {
+  color: var(--un-white);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.invert h1 {
+  font-size: 2.5em;
+  border-bottom: 4px solid var(--un-blue);
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+section.invert h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.invert h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+section.invert strong {
+  color: var(--un-blue);
+}
+
+/* Lead slide (centered content) */
+section.lead {
+  text-align: center;
+  justify-content: center;
+}
+
+/* Lead slide - complete font isolation */
+section.lead h1,
+section.lead h2,
+section.lead h3,
+section.lead h4,
+section.lead h5,
+section.lead h6 {
+  color: var(--un-blue);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.lead h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+section.lead h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.lead h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Two-column layout */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  height: 100%;
+  align-items: start;
+}
+
+.columns-33-67 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  height: 100%;
+  align-items: start;
+}
+
+/* UN logo placeholder/emblem styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.un-emblem {
+  width: 40px;
+  height: 40px;
+  background-color: var(--un-blue);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  border: 2px solid var(--un-white);
+}
+
+.un-emblem::before {
+  content: '🌍';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: var(--un-white);
+}
+
+/* Highlight boxes */
+.highlight-box {
+  background-color: var(--un-light-blue);
+  border-left: 6px solid var(--un-blue);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+.info-box {
+  background-color: var(--un-light-gray);
+  border-left: 6px solid var(--un-gray);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+/* Buttons and call-to-action elements */
+.cta-button {
+  background: linear-gradient(135deg, var(--un-blue) 0%, var(--un-dark-blue) 100%);
+  color: var(--un-white);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 158, 219, 0.3);
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, var(--un-dark-blue) 0%, #1e40af 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 158, 219, 0.4);
+}
+
+/* Statistics or key numbers */
+.big-number {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--un-blue);
+  text-align: center;
+  margin: 15px 0;
+}
+
+.stat-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.stat-number {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: var(--un-blue);
+  display: block;
+}
+
+.stat-label {
+  font-size: 1em;
+  color: var(--un-gray);
+  margin-top: 8px;
+}
+
+/* Contact information styling */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.contact-info strong {
+  min-width: 80px;
+}
+
+/* Background image overlay layout */
+section.background-image-overlay {
+  position: relative;
+}
+
+/* Background image overlay - complete font isolation */
+section.background-image-overlay h1,
+section.background-image-overlay h2,
+section.background-image-overlay h3,
+section.background-image-overlay h4,
+section.background-image-overlay h5,
+section.background-image-overlay h6 {
+  color: var(--un-blue);
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+section.background-image-overlay h1 {
+  font-size: 1.8em;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+section.background-image-overlay h2 {
+  font-size: 1.4em;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+section.background-image-overlay h3 {
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+section.background-image-overlay p,
+section.background-image-overlay li {
+  color: var(--un-blue);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+section.background-image-overlay .stat-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+section.background-image-overlay .stat-number {
+  color: var(--un-blue);
+}
+
+section.background-image-overlay .stat-label {
+  color: var(--un-gray);
+}
+
+/* Fullscreen overlay layout */
+section.fullscreen-overlay {
+  position: relative;
+}
+
+/* Fullscreen overlay - complete font isolation */
+section.fullscreen-overlay h1,
+section.fullscreen-overlay h2,
+section.fullscreen-overlay h3,
+section.fullscreen-overlay h4,
+section.fullscreen-overlay h5,
+section.fullscreen-overlay h6 {
+  color: var(--un-white);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+section.fullscreen-overlay h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+section.fullscreen-overlay h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.fullscreen-overlay h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+section.fullscreen-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 158, 219, 0.8), rgba(30, 58, 138, 0.6));
+  z-index: 1;
+}
+
+section.fullscreen-overlay h1,
+section.fullscreen-overlay h2,
+section.fullscreen-overlay h3,
+section.fullscreen-overlay p,
+section.fullscreen-overlay li {
+  position: relative;
+  z-index: 2;
+  color: var(--un-white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+section.fullscreen-overlay .overlay-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+section.fullscreen-overlay .stat-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+}
+
+section.fullscreen-overlay .stat-number {
+  color: var(--un-blue);
+}
+
+section.fullscreen-overlay .stat-label {
+  color: var(--un-gray);
+}
+
+/* Grid with highlight layout */
+section.grid-with-highlight {
+  text-align: center;
+}
+
+/* Grid with highlight - complete font isolation */
+section.grid-with-highlight h1,
+section.grid-with-highlight h2,
+section.grid-with-highlight h3,
+section.grid-with-highlight h4,
+section.grid-with-highlight h5,
+section.grid-with-highlight h6 {
+  color: var(--un-blue);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.grid-with-highlight h1 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+section.grid-with-highlight h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.grid-with-highlight h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Override highlight box spacing for grid layout */
+section.grid-with-highlight .highlight-box {
+  margin: 20px 0 0 0;
+  font-size: 0.95em;
+}
+
+.involvement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.involvement-card {
+  background-color: var(--un-white);
+  border: 2px solid var(--un-light-gray);
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.involvement-card:hover {
+  border-color: var(--un-blue);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 158, 219, 0.2);
+}
+
+.involvement-card h3 {
+  color: var(--un-blue);
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+.involvement-card p {
+  color: var(--un-gray);
+  margin: 0 0 15px 0;
+  font-size: 0.9em;
+  line-height: 1.3;
+  flex-grow: 1;
+}
+
+.involvement-card .cta-button {
+  margin: 0;
+  font-size: 0.85em;
+  padding: 8px 16px;
+  align-self: center;
+}
+
+/* Content then image layout */
+section.content-then-image {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 50px 0 50px;
+}
+
+/* Content then image - complete font isolation */
+section.content-then-image h1,
+section.content-then-image h2,
+section.content-then-image h3,
+section.content-then-image h4,
+section.content-then-image h5,
+section.content-then-image h6 {
+  color: var(--un-blue);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.content-then-image h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+section.content-then-image h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.content-then-image h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+section.content-then-image .top-content {
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+section.content-then-image .full-width-image {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 0;
+  height: 250px;
+  overflow: hidden;
+}
+
+section.content-then-image .full-width-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Metrics grid layout */
+section.metrics-grid {
+  text-align: center;
+  padding: 35px 50px 15px 50px;
+}
+
+/* Metrics grid - complete font isolation */
+section.metrics-grid h1,
+section.metrics-grid h2,
+section.metrics-grid h3,
+section.metrics-grid h4,
+section.metrics-grid h5,
+section.metrics-grid h6 {
+  color: var(--un-blue);
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+  text-shadow: none;
+}
+
+section.metrics-grid h1 {
+  font-size: 2.2em;
+  margin-bottom: 30px;
+}
+
+section.metrics-grid h2 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+section.metrics-grid h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.metrics-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: auto auto !important;
+  gap: 20px !important;
+  margin: 0 auto 15px auto;
+  max-width: none;
+  width: 85%;
+}
+
+.metric-card {
+  background: linear-gradient(135deg, #ffffff 0%, var(--un-light-blue) 100%);
+  border: 2px solid var(--un-light-gray);
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--un-blue), var(--un-dark-blue));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--un-blue);
+  box-shadow: 0 8px 24px rgba(0, 158, 219, 0.15);
+}
+
+.metric-card:hover::before {
+  transform: scaleX(1);
+}
+
+.metric-icon {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  opacity: 0.8;
+}
+
+.metric-number {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--un-blue);
+  margin-bottom: 3px;
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 0.8em;
+  color: var(--un-gray);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.impact-summary {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1em;
+  color: var(--un-gray);
+  text-align: center;
+}
+
+.impact-summary strong {
+  color: var(--un-blue);
+}
+
+/* Responsive for metrics grid */
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+    width: 95%;
+  }
+  
+  .metric-card {
+    padding: 30px 20px;
+    height: 160px;
+  }
+  
+  .metric-number {
+    font-size: 2.2em;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  section {
+    padding: 30px 25px 25px 25px;
+  }
+  
+  /* Keep columns side-by-side for presentations */
+  .columns, .columns-33-67 {
+    gap: 20px;
+  }
+  
+  /* Responsive font sizes - properly scoped to avoid conflicts */
+  section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h1 {
+    font-size: 1.5em;
+  }
+  
+  section:not(.title):not(.section-divider):not(.invert):not(.lead):not(.background-image-overlay):not(.fullscreen-overlay):not(.grid-with-highlight):not(.content-then-image):not(.metrics-grid) h2 {
+    font-size: 1.2em;
+  }
+  
+  /* Title slide responsive */
+  section.title h1 {
+    font-size: 2.2em;
+  }
+  
+  section.title h2 {
+    font-size: 1.2em;
+  }
+  
+  /* Section divider responsive */
+  section.section-divider h1 {
+    font-size: 2.2em;
+  }
+  
+  /* Lead slide responsive */
+  section.lead h1 {
+    font-size: 2.2em;
+  }
+  
+  /* Metrics grid responsive */
+  section.metrics-grid h1 {
+    font-size: 1.8em;
+  }
+}

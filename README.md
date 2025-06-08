@@ -65,7 +65,7 @@ Remove-Item "urbalurba-present.zip"
 - `template-settings.md` - Configure for your organization  
 - `ai-instructions.md` - Simple instructions for Claude Code
 - `ai-design-template.md` - Detailed design patterns and specifications
-- `red-cross-1-theme.css` - Norwegian Red Cross visual theme
+- `themes/` - Multiple visual themes (Red Cross, CNN, DNB Bank, UN)
 - `red-cross-example-presentation.md` - Complete working example
 
 ### 2. Configure Your Organization Settings
@@ -75,6 +75,7 @@ Remove-Item "urbalurba-present.zip"
 edit urbalurba-present/template-settings.md
 
 # Update: organization name, website, logo, images, videos, theme file
+# Choose from available themes: red-cross-1-theme.css, cnn-theme.css, dnb-bank-theme.css, un-theme.css
 # This tells AI what branding and media to use in your presentations
 ```
 
@@ -123,14 +124,27 @@ Edit `my-presentation.md` to refine your presentation. You can:
 - Adjust messaging and add details as needed
 - Export to preview results (se the [howto guide](howto/howto.md) for details)
 
+## 🎨 Available Themes
+
+Choose from professionally designed themes in the `themes/` folder:
+
+| Theme | Organization | Best For | Key Features |
+|-------|-------------|----------|--------------|
+| **red-cross-1-theme.css** | Norwegian Red Cross | Humanitarian/NGO | Red & white colors, clean layout |
+| **cnn-theme.css** | CNN News | Media/News | Bold typography, news-style layout |
+| **dnb-bank-theme.css** | DNB Bank | Financial/Corporate | Professional blue, banking aesthetic |
+| **un-theme.css** | United Nations | International/Diplomatic | UN blue, global organization style |
+
+**To use a theme:** Update the `theme_file` setting in `template-settings.md` to point to your chosen theme (e.g., `themes/cnn-theme.css`).
+
 ## 📋 Available Design Patterns
 
 | Pattern | Best For | Key Features |
 |---------|----------|--------------|
-| **Title Slides** | Opening/closing | Red Cross logo, centered branding |
+| **Title Slides** | Opening/closing | Organization logo, centered branding |
 | **Two-Column Layouts** | Comparisons, before/after | Balanced content distribution |
 | **Statistics & Data** | Key metrics, impact numbers | Visual emphasis on important figures |
-| **Image + Text** | Storytelling, case studies | Professional Red Cross photography |
+| **Image + Text** | Storytelling, case studies | Professional photography integration |
 | **Video Integration** | Demonstrations, testimonials | Embedded YouTube videos |
 | **Section Dividers** | Chapter breaks | Clean transitions between topics |
 | **Call-to-Action Grids** | Next steps, contact info | Organized action items |
@@ -194,9 +208,11 @@ See the system in action with a complete Norwegian Red Cross presentation:
 **Source:** [`red-cross-example-presentation.md`](red-cross-example-presentation.md) - Complete markdown source showing all design patterns and content structure
 
 **Exported Formats:**
-- **[HTML Version](examples/red-cross-example-presentation.html)** - Interactive web presentation with animations and embedded videos
-- **[PDF Version](examples/red-cross-example-presentation.pdf)** - Print-ready format for handouts and documentation  
-- **[PowerPoint Version](examples/red-cross-example-presentation.pptx)** - Editable slides for Microsoft Office workflows
+- **[HTML Version](https://github.com/terchris/urbalurba-present/blob/main/examples/red-cross-example-presentation.html)** - Interactive web presentation with animations and embedded videos
+- **[PDF Version](https://github.com/terchris/urbalurba-present/blob/main/examples/red-cross-example-presentation.pdf)** - Print-ready format for handouts and documentation  
+- **[PowerPoint Version](https://github.com/terchris/urbalurba-present/blob/main/examples/red-cross-example-presentation.pptx)** - Editable slides for Microsoft Office workflows
+
+*Note: For PDF and PowerPoint files, click the file link above, then click the "Download" button on the GitHub file page.*
 
 **How it was created:**
 1. Open `red-cross-example-presentation.md` in VS Code
@@ -224,14 +240,16 @@ These examples demonstrate all 15+ design patterns in a real-world presentation 
 
 Built with [Marp framework](https://marp.app/) and designed to revolutionize how you  create presentations. The system combines proven communication design patterns with AI-powered content optimization to ensure every presentation achieves maximum impact.
 
-**Current Templates:**
-- Norwegian Red Cross (complete branding and design system) - See `template-settings.md`
-- Additional organizational templates coming soon
+**Available Themes:**
+- **Norwegian Red Cross** - Humanitarian/NGO organizations (red-cross-1-theme.css)
+- **CNN News** - Media and news organizations (cnn-theme.css)  
+- **DNB Bank** - Financial and corporate organizations (dnb-bank-theme.css)
+- **United Nations** - International and diplomatic organizations (un-theme.css)
 
 **System Architecture:**
-- `template-settings.md` - Organization variables (logos, colors, images)
+- `template-settings.md` - Organization variables (logos, colors, images, theme selection)
 - `ai-design-template.md` - Generic AI instructions using variables
-- `[org]-theme.css` - Specific visual themes per organization
+- `themes/` - Professional visual themes for different organization types
 - `examples/` - Live demonstrations in HTML, PDF, and PowerPoint formats
 
 *Created by Urbalurba to transform presentation creation through AI-powered design automation.*

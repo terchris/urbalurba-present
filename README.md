@@ -4,11 +4,17 @@
 
 A presentation framework that transforms how you create professional presentations. **You focus on your expertise and content, AI handles all the design decisions and creates stunning presentations that follow best practices for conveying your message.**
 
+## 🧠 Your Knowledge + AI = Professional Results
+
+**Important:** This system doesn't generate content for you. **YOU provide the expertise, knowledge, and ideas.** The AI simply takes your raw content (workshop notes, bullet points, research findings) and transforms it into professionally structured slides with optimal design patterns.
+
+**You're the expert. AI is your presentation designer.**
+
 ## ✨ What This System Does
 
 **Transforms presentation creation from complex design work to pure content focus:**
 
-- 🤖 **AI Creates Your Presentation** - Just provide your content, AI handles all design decisions
+- 🤖 **AI Organizes Your Content** - You provide the knowledge, AI handles structure and design decisions
 - 🎨 **Best Practice Layouts Automatically Applied** - Proven patterns for maximum message impact
 - 🏢 **Professional Branding Built-In** - Currently supports Norwegian Red Cross, expanding to more organizations
 - 🚀 **15+ Presentation Patterns** - Title slides, data visualization, storytelling, technical content, and more  
@@ -17,9 +23,18 @@ A presentation framework that transforms how you create professional presentatio
 - 🤖 **AI Loves text** - AI is built into vscode and will help you write.
 - 🔓 **presentation is not locked into a specific tool** - Just as in free speech, your text should not be locked into a proprietary format that someone else controls.
 
+## 📋 Example Presentation Output
+From simple markdown notes to presentation in 3 formats:
+
+- **HTML** - [Interactive web presentation with speaker notes](https://terchris.github.io/urbalurba-present/examples/red-cross-example-presentation.html)
+- **PDF** - [Print-ready format for handouts and documentation](https://terchris.github.io/urbalurba-present/examples/red-cross-example-presentation.pdf)
+- **PowerPoint** - [Editable slides for Microsoft PowerPoint](https://github.com/terchris/urbalurba-present/raw/main/examples/red-cross-example-presentation.pptx)
+
+The presentation content / the text is in a simple markdown file, which you can edit in any text editor. **Source:** [`red-cross-example-presentation.md`](red-cross-example-presentation.md)
+
 ## 🎯 Key Benefits
 
-- **🤖 AI Creates Your Presentation** → Just provide raw content, get polished slides following communication best practices
+- **🤖 AI Organizes Your Content** → Provide your expertise and raw ideas, get professionally structured slides following communication best practices
 - **⚡ 95% Faster** → From idea to professional presentation in minutes, not hours  
 - **🎨 No Design Skills Needed** → Focus on your message, AI handles all visual design decisions
 - **🏢 Brand Compliance Built-In** → Every slide automatically follows organizational standards
@@ -29,20 +44,21 @@ A presentation framework that transforms how you create professional presentatio
 
 ### Simple 4-Step Process:
 
-1. **📝 You Provide Content** → Create `presentation-input.md` with your workshop notes, bullet points, or any raw text describing your presentation
-2. **🤖 AI Creates Initial Structure** → AI reads your content + organization settings, generates `my-presentation.md` with suggested slide layouts and design patterns
+1. **📝 You Provide Your Expertise** → Add your knowledge, research, and ideas to `presentation-input.md` (workshop notes, bullet points, findings, etc.)
+2. **🤖 AI Structures Your Content** → AI reads your expertise + organization settings, generates `my-presentation.md` with professional slide layouts and design patterns
 3. **✏️ You Refine & Iterate** → Edit `my-presentation.md` like working in PowerPoint - modify content, reorder slides, adjust messaging. Export anytime to see results
 4. **🎨 System Generates Output** → Convert to HTML, PDF, or PowerPoint with perfect branding and professional design
 
-![howto/editing-presentation.png](https://github.com/terchris/urbalurba-present/raw/main/howto/editing-presentation.png)
+![VS Code editing interface with Marp extension showing presentation editing](doc/editing-presentation.png)
 
 ### The Magic:
-- **AI gives you a smart starting point** with optimal layouts for each content type (stats → data visualization, stories → image layouts, etc.)
+- **You provide the expertise** - Your knowledge, research findings, and ideas are the foundation
+- **AI organizes professionally** - Optimal layouts for each content type (stats → data visualization, stories → image layouts, etc.)
 - **You maintain full control** to edit, iterate, and perfect your presentation
 - **Instant preview** by exporting during your editing process
 - **Automatic brand compliance** using your organization's colors, fonts, and imagery built into every design pattern
 
-**For detailed step-by-step instructions with screenshots, see the [complete how-to guide](https://github.com/terchris/urbalurba-present/blob/main/howto/howto.md).**
+**For detailed step-by-step instructions with screenshots, see the [complete how-to guide](doc/howto.md).**
 
 ## 🚀 Quick Start
 
@@ -59,7 +75,7 @@ $url = (Invoke-RestMethod "https://api.github.com/repos/terchris/urbalurba-prese
 Invoke-WebRequest -Uri $url -OutFile "urbalurba-present.zip"
 Expand-Archive -Path "urbalurba-present.zip" -DestinationPath "." -Force
 Remove-Item "urbalurba-present.zip"
-& "./urbalurba-present/initiate.sh"
+.\urbalurba-present\initiate.bat
 ```
 
 **What this one command does:**
@@ -129,7 +145,7 @@ Edit `my-presentation.md` in VS Code to refine your presentation. You can:
 - Modify content directly in the markdown file
 - Reorder slides by moving sections around
 - Adjust messaging and add details as needed
-- Export to preview results (see the [howto guide](https://github.com/terchris/urbalurba-present/blob/main/howto/howto.md) for details)
+- Export to preview results (see the [howto guide](doc/howto.md) for details)
 
 ## 🎨 Available Themes
 
@@ -162,46 +178,36 @@ Choose from professionally designed themes in the `themes/` folder:
 
 ### Required Software
 
-1. **Claude Pro/Team Subscription** - [Subscribe to Claude](https://claude.ai/upgrade) for AI presentation creation
-2. **Claude Code** - [Install Claude Code](https://docs.anthropic.com/en/docs/claude-code) for AI-powered file editing
-3. **VS Code** - [Download and install](https://code.visualstudio.com/download) if you don't have it
-4. **Node.js** - [Download and install](https://nodejs.org/en/download/) if you don't have it
-5. **Marp CLI** - Install via npm:
+**Install in this order:**
+
+1. **Node.js** - [Download and install](https://nodejs.org/en/download/) (required for Marp CLI)
+2. **VS Code** - [Download and install](https://code.visualstudio.com/download) if you don't have it
+3. **Marp CLI** - Install via npm (requires Node.js):
    ```bash
    npm install -g @marp-team/marp-cli
    ```
-6. **Marp VS Code Extension** - [Install from VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-
-### VS Code Setup
-
-If you already use VS Code then you copy the `markdown.marp.`settings from the `urbalurba-present/.vscode` folder to your project root. If you don't have a `.vscode` folder in your project root, then you can copy the settings from the `urbalurba-present/.vscode` folder like this:
-
-```bash
-mkdir -p .vscode
-cd .vscode
-copy ../urbalurba-present/.vscode/settings.json .
-```
-
-Then open VS Code in your project root:
-
-```bash
-code .
-```
+4. **Marp VS Code Extension** - [Install from VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
+5. **Claude Pro/Team Subscription** - [Subscribe to Claude](https://claude.ai/upgrade) for AI presentation creation
+6. **Claude Code** - [Install Claude Code](https://docs.anthropic.com/en/docs/claude-code) for AI-powered file editing
 
 **Benefits of VS Code + Marp Extension:**
+
+- Separating content from design
 - Live preview while editing
-- Easy export options via Command Palette
+- Easy export options (PDF, PowerPoint, HTML) via Command Palette
 - Syntax highlighting for presentation markdown
 
 ## 📊 Real-World Impact
 
 **Traditional Approach:**
+
 - Hours spent on design and layout decisions
 - Inconsistent messaging and visual presentation
 - Design skills required for professional results
 - Manual application of communication best practices
 
 **With Urbalurba + AI:**
+
 - Focus 100% on your content and message
 - AI automatically applies proven communication patterns
 - Professional results without design expertise
@@ -210,23 +216,25 @@ code .
 
 ## 📁 Live Examples
 
-See the system in action with a complete Norwegian Red Cross presentation:
+### 🤖 See Claude Code in Action
 
-**Source:** [`red-cross-example-presentation.md`](red-cross-example-presentation.md) - Complete markdown source showing all design patterns and content structure
+**[Complete Claude Code Session](doc/claude-output-example.md)** - Full transcript showing exactly what happens when you run Claude Code with the Urbalurba system. See the AI read files, analyze content, and generate a complete presentation step-by-step.
 
-**Exported Formats:**
-- **[HTML Version](https://github.com/terchris/urbalurba-present/blob/main/examples/red-cross-example-presentation.html)** - Interactive web presentation with animations and embedded videos
-- **[PDF Version](https://github.com/terchris/urbalurba-present/blob/main/examples/red-cross-example-presentation.pdf)** - Print-ready format for handouts and documentation  
-- **[PowerPoint Version](https://github.com/terchris/urbalurba-present/blob/main/examples/red-cross-example-presentation.pptx)** - Editable slides for Microsoft Office workflows
+*Perfect for understanding the workflow before you try it yourself.*
 
-*Note: For PDF and PowerPoint files, click the file link above, then click the "Download" button on the GitHub file page.*
 
-**How it was created:**
+### 📄 How the he Presentation was created:
 1. Open `red-cross-example-presentation.md` in VS Code
 2. Use the Marp extension export button (see [plugin documentation](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) for details)
 3. Export to HTML, PDF, and PowerPoint formats directly from VS Code
 
 These examples demonstrate all 15+ design patterns in a real-world presentation showcasing Norwegian Red Cross programs and services.
+
+## 📖 Background Story
+
+**[From Post-it Notes to Professional Presentations: How AI Became My Design Partner](https://github.com/terchris/urbalurba-present/blob/main/doc/blog1.md)** - The personal story behind building this system. Read how a simple workshop with colleagues led to discovering a better way to create presentations, and why AI makes the perfect design partner for people who know their subject but struggle with slide layouts.
+
+*Perfect for understanding the motivation and real-world problem this system solves.*
 
 ## 🎓 Training Resources
 

@@ -54,12 +54,16 @@ jobs:
             echo "❌ Missing initiate.sh"
             exit 1
           fi
+          if [ ! -f "initiate.bat" ]; then
+            echo "❌ Missing initiate.bat"
+            exit 1
+          fi
           echo "✅ All template files are present"
 
       - name: 📦 Create urbalurba-present.zip
         run: |
           echo "📦 Creating urbalurba-present.zip..."
-          zip -r urbalurba-present.zip . -x ".github/*" ".git/*" "*.zip" "examples/*" "howto/*"
+          zip -r urbalurba-present.zip . -x ".github/*" ".git/*" "*.zip" "examples/*" "doc/*"
 
       - name: ⬆️ Upload artifact
         uses: actions/upload-artifact@v4
